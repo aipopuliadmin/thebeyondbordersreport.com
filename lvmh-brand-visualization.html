@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LVMH Brand Relationship Visualization</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            z-index: 100;
+        }
+        .info-panel h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        .info-panel p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 25px;
+            border-radius: 25px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+        .controls button {
+            margin: 0 5px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        .controls button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+        .loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            z-index: 50;
+        }
+        .stats {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            z-index: 100;
+            display: none;
+        }
+        .stats.active {
+            display: block;
+        }
+        .stats div {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+    
+    <div class="info-panel">
+        <h1>LVMH Brands</h1>
+        <p>Click on <strong>LVMH</strong> to explore business divisions. Click on divisions to see brands. Use mouse to rotate and zoom.</p>
+    </div>
+
+    <div class="controls">
+        <button onclick="resetView()">Reset View</button>
+        <button onclick="collapseAll()">Collapse All</button>
+        <button onclick="toggleStats()">Toggle Stats</button>
+    </div>
+
+    <div class="tooltip" id="tooltip"></div>
+    <div class="loading" id="loading">Loading...</div>
+    <div class="stats" id="stats">
+        <div id="fps">FPS: 0</div>
+        <div id="nodes">Nodes: 0</div>
+        <div id="triangles">Triangles: 0</div>
+        <div id="memory">Memory: 0 MB</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+    <script>
+        // Configuration Constants
+        const CONFIG = {
+            CAMERA: {
+                FOV: 75,
+                NEAR: 0.1,
+                FAR: 1000,
+                INITIAL_Z: 15,
+                MIN_ZOOM: 5,
+                MAX_ZOOM: 50
+            },
+            NODE: {
+                SIZE_LEVEL_0: 1.5,
+                SIZE_LEVEL_1: 1,
+                SIZE_LEVEL_2: 0.6,
+                SEGMENTS: 32,
+                EMISSIVE_MULTIPLIER: 0.3,
+                SHININESS: 100
+            },
+            LAYOUT: {
+                RADIUS_LEVEL_0: 8,
+                RADIUS_LEVEL_1: 5,
+                Z_VARIANCE: 2
+            },
+            ANIMATION: {
+                SCALE_DURATION: 500,
+                AUTO_ROTATE_SPEED: 0.005
+            },
+            INTERACTION: {
+                ZOOM_SPEED: 0.5,
+                PAN_SPEED: 0.01,
+                MOUSE_THROTTLE: 16 // ~60fps
+            },
+            TEXT: {
+                FONT_SIZE_LEVEL_0: 80,
+                FONT_SIZE_LEVEL_1: 60,
+                FONT_SIZE_LEVEL_2: 40,
+                SCALE_LEVEL_0: 3,
+                SCALE_LEVEL_1: 2,
+                SCALE_LEVEL_2: 1.2,
+                PADDING: 20
+            }
+        };
+
+        // Wait for Three.js to load
+        window.addEventListener('load', function() {
+            if (typeof THREE === 'undefined') {
+                document.getElementById('loading').textContent = 'Error: Three.js failed to load. Please check your internet connection.';
+                return;
+            }
+            startVisualization();
+        });
+
+        function startVisualization() {
+        // Brand hierarchy data structure
+        const brandData = {
+            name: "LVMH",
+            color: "#1a1a1a",
+            children: [
+                {
+                    name: "Fashion & Leather Goods",
+                    color: "#8B4513",
+                    children: [
+                        { name: "Louis Vuitton", color: "#654321" },
+                        { name: "Dior", color: "#D4AF37" },
+                        { name: "Fendi", color: "#FFD700" },
+                        { name: "Céline", color: "#C19A6B" },
+                        { name: "Givenchy", color: "#8B7355" },
+                        { name: "Loewe", color: "#A0826D" },
+                        { name: "Marc Jacobs", color: "#967969" },
+                        { name: "Kenzo", color: "#704214" },
+                        { name: "Berluti", color: "#5C4033" },
+                        { name: "Moynat", color: "#6F4E37" },
+                        { name: "J.W. Anderson", color: "#8B7D6B" },
+                        { name: "Nicholas Kirkwood", color: "#826644" }
+                    ]
+                },
+                {
+                    name: "Wines & Spirits",
+                    color: "#8B0000",
+                    children: [
+                        { name: "Moët & Chandon", color: "#FFD700" },
+                        { name: "Dom Pérignon", color: "#C0C0C0" },
+                        { name: "Veuve Clicquot", color: "#FFA500" },
+                        { name: "Krug", color: "#DAA520" },
+                        { name: "Hennessy", color: "#8B4513" },
+                        { name: "Glenmorancie", color: "#D2691E" },
+                        { name: "Ardbeg", color: "#556B2F" },
+                        { name: "Belvedere", color: "#87CEEB" },
+                        { name: "Ruinart", color: "#F5DEB3" },
+                        { name: "Cloudy Bay", color: "#4682B4" },
+                        { name: "Cape Mentelle", color: "#8B008B" },
+                        { name: "Newton Vineyard", color: "#6B8E23" },
+                        { name: "Château d'Yquem", color: "#FFD700" },
+                        { name: "Cheval des Andes", color: "#DC143C" },
+                        { name: "Terrazas", color: "#8B0000" }
+                    ]
+                },
+                {
+                    name: "Perfumes & Cosmetics",
+                    color: "#FF69B4",
+                    children: [
+                        { name: "Parfums Christian Dior", color: "#FFB6C1" },
+                        { name: "Guerlain", color: "#DDA0DD" },
+                        { name: "Givenchy Parfums", color: "#FF1493" },
+                        { name: "Benefit", color: "#FF6B9D" },
+                        { name: "Make Up For Ever", color: "#C71585" },
+                        { name: "Acqua di Parma", color: "#48D1CC" },
+                        { name: "Fresh", color: "#FFE4E1" },
+                        { name: "Kenzo Parfums", color: "#FF69B4" },
+                        { name: "Loewe Perfumes", color: "#DB7093" },
+                        { name: "Fendi Perfumes", color: "#FFC0CB" }
+                    ]
+                },
+                {
+                    name: "Watches & Jewelry",
+                    color: "#4169E1",
+                    children: [
+                        { name: "Bvlgari", color: "#FFD700" },
+                        { name: "TAG Heuer", color: "#C0C0C0" },
+                        { name: "Hublot", color: "#000000" },
+                        { name: "Zenith", color: "#4682B4" },
+                        { name: "Chaumet", color: "#E6E6FA" },
+                        { name: "Fred", color: "#B0C4DE" },
+                        { name: "De Beers", color: "#DCDCDC" }
+                    ]
+                },
+                {
+                    name: "Selective Retailing",
+                    color: "#32CD32",
+                    children: [
+                        { name: "Sephora", color: "#000000" },
+                        { name: "Le Bon Marché", color: "#006400" },
+                        { name: "Starboard", color: "#228B22" }
+                    ]
+                },
+                {
+                    name: "Other Activities",
+                    color: "#9370DB",
+                    children: [
+                        { name: "Cheval Blanc", color: "#F5F5DC" },
+                        { name: "Les Echos", color: "#4B0082" },
+                        { name: "Samaritaine", color: "#8A2BE2" },
+                        { name: "Royal Van Lent", color: "#483D8B" },
+                        { name: "Jardin d'Acclimatation", color: "#9370DB" }
+                    ]
+                }
+            ]
+        };
+
+        // Three.js setup
+        let scene, camera, renderer, raycaster, mouse, controls;
+        let nodes = [];
+        let expandedNodes = new Set();
+        let lines = [];
+        
+        // Resource pools for reuse (optimization)
+        const geometryPool = {
+            large: null,
+            medium: null,
+            small: null
+        };
+        const materialCache = new Map();
+        const spriteTextureCache = new Map();
+        
+        // Performance tracking
+        let lastMouseMoveTime = 0;
+        let animationQueue = [];
+        let frameCount = 0;
+        let lastFpsUpdate = Date.now();
+        let currentFps = 0;
+
+        // Cleanup function to prevent memory leaks
+        function disposeNode(node) {
+            if (node.mesh) {
+                if (node.mesh.geometry && !Object.values(geometryPool).includes(node.mesh.geometry)) {
+                    node.mesh.geometry.dispose();
+                }
+                if (node.mesh.material && !materialCache.has(node.data.color)) {
+                    node.mesh.material.dispose();
+                }
+            }
+            if (node.sprite) {
+                if (node.sprite.material) {
+                    // Only dispose material, not the shared texture from cache
+                    node.sprite.material.dispose();
+                }
+            }
+        }
+
+        function init() {
+            // Scene
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0a1a);
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(
+                CONFIG.CAMERA.FOV,
+                window.innerWidth / window.innerHeight,
+                CONFIG.CAMERA.NEAR,
+                CONFIG.CAMERA.FAR
+            );
+            camera.position.z = CONFIG.CAMERA.INITIAL_Z;
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2)); // Optimize for performance
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            // Initialize geometry pool (reuse geometries)
+            geometryPool.large = new THREE.SphereGeometry(CONFIG.NODE.SIZE_LEVEL_0, CONFIG.NODE.SEGMENTS, CONFIG.NODE.SEGMENTS);
+            geometryPool.medium = new THREE.SphereGeometry(CONFIG.NODE.SIZE_LEVEL_1, CONFIG.NODE.SEGMENTS, CONFIG.NODE.SEGMENTS);
+            geometryPool.small = new THREE.SphereGeometry(CONFIG.NODE.SIZE_LEVEL_2, CONFIG.NODE.SEGMENTS, CONFIG.NODE.SEGMENTS);
+
+            // Raycaster for clicking
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            // Lights
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+            scene.add(ambientLight);
+
+            const pointLight = new THREE.PointLight(0xffffff, 0.8);
+            pointLight.position.set(10, 10, 10);
+            scene.add(pointLight);
+
+            // Create root node (LVMH)
+            createNode(brandData, 0, 0, 0, null, 0);
+
+            // Event listeners
+            window.addEventListener('resize', onWindowResize);
+            renderer.domElement.addEventListener('click', onNodeClick);
+            renderer.domElement.addEventListener('mousemove', onMouseMove);
+
+            // Simple orbit controls with mouse drag
+            let isDragging = false;
+            let previousMousePosition = { x: 0, y: 0 };
+
+            renderer.domElement.addEventListener('mousedown', (e) => {
+                if (e.button === 2 || e.ctrlKey) { // Right click or ctrl+left click
+                    isDragging = true;
+                }
+            });
+
+            renderer.domElement.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    const deltaX = e.clientX - previousMousePosition.x;
+                    const deltaY = e.clientY - previousMousePosition.y;
+
+                    camera.position.x -= deltaX * CONFIG.INTERACTION.PAN_SPEED;
+                    camera.position.y += deltaY * CONFIG.INTERACTION.PAN_SPEED;
+                }
+
+                previousMousePosition = {
+                    x: e.clientX,
+                    y: e.clientY
+                };
+            });
+
+            renderer.domElement.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            // Zoom with mouse wheel
+            renderer.domElement.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const zoomSpeed = CONFIG.INTERACTION.ZOOM_SPEED;
+                camera.position.z += e.deltaY * 0.01 * zoomSpeed;
+                camera.position.z = Math.max(CONFIG.CAMERA.MIN_ZOOM, Math.min(CONFIG.CAMERA.MAX_ZOOM, camera.position.z));
+            }, { passive: false });
+
+            // Prevent context menu
+            renderer.domElement.addEventListener('contextmenu', (e) => e.preventDefault());
+
+            // Hide loading
+            document.getElementById('loading').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+            }, 300);
+
+            animate();
+        }
+
+        // Get or create cached material
+        function getMaterial(color) {
+            const colorKey = typeof color === 'string' ? color : color.toString();
+            
+            if (!materialCache.has(colorKey)) {
+                const material = new THREE.MeshPhongMaterial({
+                    color: new THREE.Color(color),
+                    emissive: new THREE.Color(color).multiplyScalar(CONFIG.NODE.EMISSIVE_MULTIPLIER),
+                    shininess: CONFIG.NODE.SHININESS
+                });
+                materialCache.set(colorKey, material);
+            }
+            
+            return materialCache.get(colorKey);
+        }
+
+        // Get appropriate geometry from pool
+        function getGeometry(level) {
+            switch(level) {
+                case 0: return geometryPool.large;
+                case 1: return geometryPool.medium;
+                default: return geometryPool.small;
+            }
+        }
+
+        function createNode(data, x, y, z, parent, level) {
+            const geometry = getGeometry(level);
+            const material = getMaterial(data.color);
+            const sphere = new THREE.Mesh(geometry, material);
+            sphere.position.set(x, y, z);
+            
+            // Add text sprite
+            const sprite = createTextSprite(data.name, level);
+            const offsetY = level === 0 ? 2.5 : level === 1 ? 1.8 : 1.2;
+            sprite.position.set(x, y - offsetY, z);
+            scene.add(sprite);
+
+            scene.add(sphere);
+
+            const nodeObj = {
+                mesh: sphere,
+                sprite: sprite,
+                data: data,
+                parent: parent,
+                children: [],
+                level: level,
+                expanded: false
+            };
+
+            nodes.push(nodeObj);
+            
+            if (parent) {
+                parent.children.push(nodeObj);
+            }
+
+            return nodeObj;
+        }
+
+        function createTextSprite(text, level) {
+            // Check cache first
+            const cacheKey = `${text}_${level}`;
+            if (spriteTextureCache.has(cacheKey)) {
+                const cachedData = spriteTextureCache.get(cacheKey);
+                const spriteMaterial = new THREE.SpriteMaterial({ map: cachedData.texture });
+                const sprite = new THREE.Sprite(spriteMaterial);
+                sprite.scale.copy(cachedData.scale);
+                return sprite;
+            }
+
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d', { alpha: true });
+            const fontSize = level === 0 ? CONFIG.TEXT.FONT_SIZE_LEVEL_0 : 
+                           level === 1 ? CONFIG.TEXT.FONT_SIZE_LEVEL_1 : 
+                           CONFIG.TEXT.FONT_SIZE_LEVEL_2;
+            
+            context.font = `Bold ${fontSize}px Arial`;
+            
+            const textWidth = context.measureText(text).width;
+            canvas.width = textWidth + CONFIG.TEXT.PADDING;
+            canvas.height = fontSize + CONFIG.TEXT.PADDING;
+            
+            context.font = `Bold ${fontSize}px Arial`;
+            context.fillStyle = 'white';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+            context.fillText(text, canvas.width / 2, canvas.height / 2);
+            
+            const texture = new THREE.CanvasTexture(canvas);
+            texture.needsUpdate = true;
+            
+            const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            
+            const scale = level === 0 ? CONFIG.TEXT.SCALE_LEVEL_0 : 
+                         level === 1 ? CONFIG.TEXT.SCALE_LEVEL_1 : 
+                         CONFIG.TEXT.SCALE_LEVEL_2;
+            const scaleVector = new THREE.Vector3(scale * (canvas.width / canvas.height), scale, 1);
+            sprite.scale.copy(scaleVector);
+            
+            // Store texture and scale for reuse
+            spriteTextureCache.set(cacheKey, {
+                texture: texture,
+                scale: scaleVector.clone()
+            });
+            
+            return sprite;
+        }
+
+        function expandNode(node) {
+            if (node.expanded || !node.data.children) return;
+
+            node.expanded = true;
+            expandedNodes.add(node);
+
+            const childCount = node.data.children.length;
+            const radius = node.level === 0 ? CONFIG.LAYOUT.RADIUS_LEVEL_0 : CONFIG.LAYOUT.RADIUS_LEVEL_1;
+            const angleStep = (Math.PI * 2) / childCount;
+
+            node.data.children.forEach((childData, index) => {
+                const angle = index * angleStep;
+                const x = node.mesh.position.x + Math.cos(angle) * radius;
+                const y = node.mesh.position.y + Math.sin(angle) * radius;
+                const z = node.mesh.position.z + (Math.random() - 0.5) * CONFIG.LAYOUT.Z_VARIANCE;
+
+                const childNode = createNode(childData, x, y, z, node, node.level + 1);
+                
+                // Create connecting line with optimized geometry
+                const lineMaterial = new THREE.LineBasicMaterial({ 
+                    color: 0xffffff,
+                    transparent: true,
+                    opacity: 0.3
+                });
+                const points = [node.mesh.position.clone(), childNode.mesh.position.clone()];
+                const lineGeometry = new THREE.BufferGeometry().setFromPoints(points);
+                const line = new THREE.Line(lineGeometry, lineMaterial);
+                scene.add(line);
+                lines.push({ line: line, geometry: lineGeometry, parent: node, child: childNode });
+
+                // Animate appearance with optimized queue
+                childNode.mesh.scale.set(0, 0, 0);
+                childNode.sprite.scale.set(0, 0, 0);
+                
+                const targetScale = new THREE.Vector3(1, 1, 1);
+                const targetSpriteScale = childNode.sprite.userData.targetScale ? 
+                    childNode.sprite.userData.targetScale : 
+                    new THREE.Vector3(1, 1, 1);
+                
+                queueAnimation(childNode.mesh, targetScale, CONFIG.ANIMATION.SCALE_DURATION);
+                queueAnimation(childNode.sprite, targetSpriteScale, CONFIG.ANIMATION.SCALE_DURATION);
+            });
+        }
+
+        function collapseNode(node) {
+            if (!node.expanded) return;
+
+            node.expanded = false;
+            expandedNodes.delete(node);
+
+            // Remove children recursively
+            const childrenToRemove = [...node.children];
+            node.children = [];
+
+            childrenToRemove.forEach(child => {
+                if (child.expanded) {
+                    collapseNode(child);
+                }
+                
+                // Proper cleanup to prevent memory leaks
+                scene.remove(child.mesh);
+                scene.remove(child.sprite);
+                disposeNode(child);
+                
+                // Remove from nodes array
+                const index = nodes.indexOf(child);
+                if (index > -1) {
+                    nodes.splice(index, 1);
+                }
+            });
+
+            // Remove connecting lines and dispose geometries
+            lines = lines.filter(lineObj => {
+                if (lineObj.parent === node) {
+                    scene.remove(lineObj.line);
+                    // Dispose line geometry and material
+                    if (lineObj.geometry) lineObj.geometry.dispose();
+                    if (lineObj.line.material) lineObj.line.material.dispose();
+                    return false;
+                }
+                return true;
+            });
+        }
+
+        // Optimized animation queue system
+        function queueAnimation(object, targetScale, duration) {
+            const animation = {
+                object: object,
+                startScale: object.scale.clone(),
+                targetScale: targetScale,
+                startTime: Date.now(),
+                duration: duration
+            };
+            animationQueue.push(animation);
+        }
+
+        function processAnimations() {
+            const now = Date.now();
+            animationQueue = animationQueue.filter(anim => {
+                const elapsed = now - anim.startTime;
+                const progress = Math.min(elapsed / anim.duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // ease out cubic
+                
+                anim.object.scale.lerpVectors(anim.startScale, anim.targetScale, eased);
+                
+                return progress < 1; // Keep if not finished
+            });
+        }
+
+        // Deprecated - replaced by queue system
+        function animateScale(object, targetScale, duration) {
+            const target = typeof targetScale === 'number' ? 
+                new THREE.Vector3(targetScale, targetScale, targetScale) : 
+                targetScale;
+            queueAnimation(object, target, duration);
+        }
+
+        function onNodeClick(event) {
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const meshes = nodes.map(n => n.mesh);
+            const intersects = raycaster.intersectObjects(meshes);
+
+            if (intersects.length > 0) {
+                const clickedMesh = intersects[0].object;
+                const node = nodes.find(n => n.mesh === clickedMesh);
+
+                if (node) {
+                    if (node.expanded) {
+                        collapseNode(node);
+                    } else {
+                        expandNode(node);
+                    }
+                }
+            }
+        }
+
+        function onMouseMove(event) {
+            // Throttle mouse move events for performance
+            const now = Date.now();
+            if (now - lastMouseMoveTime < CONFIG.INTERACTION.MOUSE_THROTTLE) {
+                return;
+            }
+            lastMouseMoveTime = now;
+
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            const meshes = nodes.map(n => n.mesh);
+            const intersects = raycaster.intersectObjects(meshes);
+
+            const tooltip = document.getElementById('tooltip');
+
+            if (intersects.length > 0) {
+                const hoveredMesh = intersects[0].object;
+                const node = nodes.find(n => n.mesh === hoveredMesh);
+
+                if (node) {
+                    tooltip.textContent = node.data.name;
+                    tooltip.style.left = event.clientX + 15 + 'px';
+                    tooltip.style.top = event.clientY + 15 + 'px';
+                    tooltip.style.opacity = '1';
+
+                    // Highlight effect
+                    node.mesh.material.emissive.setHex(0x444444);
+                    
+                    // Change cursor
+                    renderer.domElement.style.cursor = 'pointer';
+                }
+            } else {
+                tooltip.style.opacity = '0';
+                renderer.domElement.style.cursor = 'default';
+                
+                // Reset all highlights (optimized - reuse color objects)
+                nodes.forEach(n => {
+                    const baseColor = new THREE.Color(n.data.color);
+                    n.mesh.material.emissive.copy(baseColor.multiplyScalar(CONFIG.NODE.EMISSIVE_MULTIPLIER));
+                });
+            }
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // FPS calculation
+            frameCount++;
+            const now = Date.now();
+            if (now - lastFpsUpdate >= 1000) {
+                currentFps = frameCount;
+                frameCount = 0;
+                lastFpsUpdate = now;
+                updateStats();
+            }
+
+            // Process animation queue
+            processAnimations();
+
+            // Auto-rotate scene slightly (only visible nodes)
+            nodes.forEach(node => {
+                node.mesh.rotation.y += CONFIG.ANIMATION.AUTO_ROTATE_SPEED;
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        function updateStats() {
+            const statsDiv = document.getElementById('stats');
+            if (!statsDiv.classList.contains('active')) return;
+
+            document.getElementById('fps').textContent = `FPS: ${currentFps}`;
+            document.getElementById('nodes').textContent = `Nodes: ${nodes.length}`;
+            
+            const triangles = nodes.reduce((sum, node) => {
+                return sum + (node.mesh.geometry.attributes.position.count / 3);
+            }, 0);
+            document.getElementById('triangles').textContent = `Triangles: ${Math.floor(triangles)}`;
+            
+            if (performance.memory) {
+                const memoryMB = (performance.memory.usedJSHeapSize / 1048576).toFixed(2);
+                document.getElementById('memory').textContent = `Memory: ${memoryMB} MB`;
+            }
+        }
+
+        function toggleStats() {
+            document.getElementById('stats').classList.toggle('active');
+        }
+
+        function resetView() {
+            camera.position.set(0, 0, CONFIG.CAMERA.INITIAL_Z);
+            camera.lookAt(0, 0, 0);
+        }
+
+        function collapseAll() {
+            const expandedArray = Array.from(expandedNodes);
+            expandedArray.forEach(node => {
+                collapseNode(node);
+            });
+        }
+
+        // Initialize
+        init();
+        } // End of startVisualization function
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+Log created: 2026-01-12 10:04:29
+Type: backup
+[2026-01-12 10:04:29][notice]Start backing up.
+[2026-01-12 10:04:29][notice]server info fcgi:Off max execution time: 300 wp version:6.9 php version:8.2.30 db version:8.0.44 php ini:safe_mode: memory_limit:512M memory_get_usage:3.18 MB memory_get_peak_usage:3.29 MB extensions:PDO enabled curl enabled zlib enabled   is_multisite:0
+[2026-01-12 10:04:29][notice]Prepare to backup backup_db files.
+[2026-01-12 10:04:29][notice]Start exporting database.
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_links
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_term_relationships
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_commentmeta
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_postmeta
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_term_taxonomy
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_termmeta
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_terms
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_usermeta
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_users
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_comments
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_posts
+[2026-01-12 10:04:29][notice]Preparing to dump table wp_options
+[2026-01-12 10:04:29][notice]Exporting database finished.
+[2026-01-12 10:04:29][notice]Start compressing database
+[2026-01-12 10:04:29][notice]Prepare to zip file. file: beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_db.sql
+[2026-01-12 10:04:29][notice]Adding zip files completed.beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_db.part001.zip, filesize: 220.05 KB
+[2026-01-12 10:04:29][notice]Compressing database completed
+[2026-01-12 10:04:29][notice]Backing up backup_db completed.
+[2026-01-12 10:04:30][notice]Prepare to backup backup_themes files.
+[2026-01-12 10:04:30][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_themes.part001.zip index:236
+[2026-01-12 10:04:30][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_themes.part001.zip success. index:236 file size:7.65 MB
+[2026-01-12 10:04:30][notice]Backing up backup_themes completed.
+[2026-01-12 10:04:30][notice]Prepare to backup backup_plugin files.
+[2026-01-12 10:04:30][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_plugin.part001.zip index:1
+[2026-01-12 10:04:30][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_plugin.part001.zip success. index:1 file size:160.00 B
+[2026-01-12 10:04:30][notice]Backing up backup_plugin completed.
+[2026-01-12 10:04:30][notice]Prepare to backup backup_uploads files.
+[2026-01-12 10:04:30][notice]Backing up backup_uploads completed.
+[2026-01-12 10:04:30][notice]Prepare to backup backup_content files.
+[2026-01-12 10:04:30][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_content.part001.zip index:1
+[2026-01-12 10:04:30][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_content.part001.zip success. index:1 file size:144.00 B
+[2026-01-12 10:04:30][notice]Backing up backup_content completed.
+[2026-01-12 10:04:30][notice]Prepare to backup backup_core files.
+[2026-01-12 10:04:30][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_core.part001.zip index:2922
+[2026-01-12 10:04:32][notice]Compressing zip file:beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_core.part001.zip success. index:2922 file size:14.60 MB
+[2026-01-12 10:04:33][notice]Backing up backup_core completed.
+[2026-01-12 10:04:33][notice]Prepare to backup backup_merge files.
+[2026-01-12 10:04:33][notice]Prepare to zip file. file: beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_db.zip
+[2026-01-12 10:04:33][notice]Adding zip files completed.beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_all.part001.zip, filesize: 220.61 KB
+[2026-01-12 10:04:33][notice]Prepare to zip file. file: beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_themes.zip
+[2026-01-12 10:04:33][notice]Adding zip files completed.beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_all.part001.zip, filesize: 7.84 MB
+[2026-01-12 10:04:33][notice]Prepare to zip file. file: beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_plugin.zip
+[2026-01-12 10:04:33][notice]Adding zip files completed.beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_all.part001.zip, filesize: 7.84 MB
+[2026-01-12 10:04:33][notice]Prepare to zip file. file: beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_content.zip
+[2026-01-12 10:04:33][notice]Adding zip files completed.beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_all.part001.zip, filesize: 7.84 MB
+[2026-01-12 10:04:33][notice]Prepare to zip file. file: beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_core.zip
+[2026-01-12 10:04:33][notice]Adding zip files completed.beond.local_wpvivid-1d4d39e7dac4c_2026-01-12-10-04_backup_all.part001.zip, filesize: 22.01 MB
+[2026-01-12 10:04:33][notice]Backing up backup_merge completed.
+[2026-01-12 10:04:33][notice]Backup completed.

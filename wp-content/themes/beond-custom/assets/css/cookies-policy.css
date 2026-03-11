@@ -1,0 +1,340 @@
+/**
+ * Cookies Policy Page Styles
+ * Supports light/dark theme switching
+ *
+ * @package Beond_Custom
+ */
+
+/* ============================================
+   Cookies Policy Page Container
+   ============================================ */
+
+.cookies-policy-page .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* ============================================
+   Hero Section (using about-hero class)
+   ============================================ */
+
+.cookies-policy-page .about-hero {
+    background-color: #F9FAFB;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .cookies-policy-page .about-hero {
+    background: var(--navy-deep);
+}
+
+.cookies-policy-page .about-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cookies-policy-page .hero-label {
+    display: inline-block;
+    color: #D4AF37;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+[data-theme="dark"] .cookies-policy-page .hero-label {
+    color: #F4CA64;
+}
+
+.cookies-policy-page .hero-title {
+    font-family: var(--font-headline), Georgia, serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    max-width: 800px;
+    color: #1F2937;
+}
+
+[data-theme="dark"] .cookies-policy-page .hero-title {
+    color: #FFFFFF;
+}
+
+.cookies-policy-page .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6B7280;
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+[data-theme="dark"] .cookies-policy-page .hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cookies-policy-page .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(31, 41, 55, 0.2);
+}
+
+[data-theme="dark"] .cookies-policy-page .hero-stats {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.cookies-policy-page .stat-item {
+    text-align: left;
+}
+
+.cookies-policy-page .stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #D4AF37;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+[data-theme="dark"] .cookies-policy-page .stat-number {
+    color: #F4CA64;
+}
+
+.cookies-policy-page .stat-label {
+    font-size: 14px;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+[data-theme="dark"] .cookies-policy-page .stat-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   Content Section (using mission-section class)
+   ============================================ */
+
+.cookies-policy-page .mission-section {
+    padding: 0;
+    background: #FFFFFF;
+}
+
+[data-theme="dark"] .cookies-policy-page .mission-section {
+    background: var(--navy-deep);
+}
+
+/* Content Typography */
+.cookies-policy-page .cookies-content h2 {
+    font-family: var(--font-headline), Georgia, serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1F2937;
+    margin: 48px 0 24px 0;
+    padding-top: 16px;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content h2 {
+    color: #F4CA64;
+}
+
+.cookies-policy-page .cookies-content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.cookies-policy-page .cookies-content h3 {
+    font-family: var(--font-headline), Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1F2937;
+    margin: 32px 0 16px 0;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content h3 {
+    color: #FFFFFF;
+}
+
+.cookies-policy-page .cookies-content h4 {
+    font-family: var(--font-ui), sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+    margin: 24px 0 12px 0;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.cookies-policy-page .cookies-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4B5563;
+    margin-bottom: 20px;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content p {
+    color: var(--cream);
+}
+
+.cookies-policy-page .cookies-content ul,
+.cookies-policy-page .cookies-content ol {
+    margin: 20px 0 24px 24px;
+    color: #4B5563;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content ul,
+[data-theme="dark"] .cookies-policy-page .cookies-content ol {
+    color: var(--cream);
+}
+
+.cookies-policy-page .cookies-content li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.cookies-policy-page .cookies-content ul li {
+    list-style-type: disc;
+}
+
+.cookies-policy-page .cookies-content ol li {
+    list-style-type: decimal;
+}
+
+.cookies-policy-page .cookies-content a {
+    color: #D4AF37;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.cookies-policy-page .cookies-content a:hover {
+    color: #B8941F;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content a {
+    color: #F4CA64;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content a:hover {
+    color: #FFFFFF;
+}
+
+.cookies-policy-page .cookies-content strong {
+    font-weight: 600;
+    color: #1F2937;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content strong {
+    color: #F4CA64;
+}
+
+.cookies-policy-page .cookies-content blockquote {
+    background: #F9FAFB;
+    border-left: 4px solid #D4AF37;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+}
+
+[data-theme="dark"] .cookies-policy-page .cookies-content blockquote {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: #F4CA64;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .cookies-policy-page .container {
+        padding: 0 40px;
+    }
+
+    .cookies-policy-page .hero-title {
+        font-size: 48px;
+    }
+
+    .cookies-policy-page .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .cookies-policy-page .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .cookies-policy-page .stat-number {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cookies-policy-page .container {
+        padding: 0 24px;
+    }
+
+    .cookies-policy-page .about-hero {
+        padding: 80px 0 60px;
+    }
+
+    .cookies-policy-page .hero-title {
+        font-size: 40px;
+    }
+
+    .cookies-policy-page .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .cookies-policy-page .hero-stats {
+        margin-top: 40px;
+        padding-top: 32px;
+    }
+
+    .cookies-policy-page .mission-section {
+        padding: 60px 0;
+    }
+
+    .cookies-policy-page .cookies-content h2 {
+        font-size: 28px;
+        margin: 40px 0 20px 0;
+    }
+
+    .cookies-policy-page .cookies-content h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .cookies-policy-page .hero-title {
+        font-size: 32px;
+    }
+
+    .cookies-policy-page .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .cookies-policy-page .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .cookies-policy-page .stat-number {
+        font-size: 36px;
+    }
+
+    .cookies-policy-page .cookies-content h2 {
+        font-size: 24px;
+    }
+
+    .cookies-policy-page .cookies-content h3 {
+        font-size: 20px;
+    }
+}

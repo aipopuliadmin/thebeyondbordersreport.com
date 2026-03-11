@@ -1,0 +1,282 @@
+[2026-01-22 04:43:11][notice]Start restoring themes.
+[2026-01-22 04:43:11][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip
+[2026-01-22 04:43:11][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip succeeded.
+[2026-01-22 04:43:11][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_themes.zip index:0
+[2026-01-22 04:43:11][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_themes.zip index:0 finished.
+[2026-01-22 04:43:11][notice]End restore themes.
+[2026-01-22 04:43:12][notice]Start restoring plugin.
+[2026-01-22 04:43:12][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip
+[2026-01-22 04:43:12][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip succeeded.
+[2026-01-22 04:43:12][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_plugin.zip index:0
+[2026-01-22 04:43:12][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_plugin.zip index:0 finished.
+[2026-01-22 04:43:12][notice]End restore plugin.
+[2026-01-22 04:43:13][notice]Start restoring plugin.
+[2026-01-22 04:43:13][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_plugin.zip index:1000
+[2026-01-22 04:43:13][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_plugin.zip index:1000 finished.
+[2026-01-22 04:43:13][notice]End restore plugin.
+[2026-01-22 04:43:15][notice]Start restoring wp-content.
+[2026-01-22 04:43:15][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip
+[2026-01-22 04:43:15][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip succeeded.
+[2026-01-22 04:43:15][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_content.zip index:0
+[2026-01-22 04:43:15][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_content.zip index:0 finished.
+[2026-01-22 04:43:15][notice]End restore wp-content.
+[2026-01-22 04:43:16][notice]Start restoring upload.
+[2026-01-22 04:43:16][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip
+[2026-01-22 04:43:17][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip succeeded.
+[2026-01-22 04:43:17][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_uploads.zip index:0
+[2026-01-22 04:43:18][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_uploads.zip index:0 finished.
+[2026-01-22 04:43:18][notice]End restore upload.
+[2026-01-22 04:43:19][notice]Start restoring upload.
+[2026-01-22 04:43:19][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_uploads.zip index:1000
+[2026-01-22 04:43:20][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_uploads.zip index:1000 finished.
+[2026-01-22 04:43:20][notice]End restore upload.
+[2026-01-22 04:43:21][notice]Start restoring upload.
+[2026-01-22 04:43:21][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_uploads.zip index:2000
+[2026-01-22 04:43:22][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_uploads.zip index:2000 finished.
+[2026-01-22 04:43:22][notice]End restore upload.
+[2026-01-22 04:43:23][notice]Start restoring wp-core.
+[2026-01-22 04:43:23][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip
+[2026-01-22 04:43:23][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip succeeded.
+[2026-01-22 04:43:23][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_core.zip
+[2026-01-22 04:43:25][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_core.zip succeeded.
+[2026-01-22 04:43:25][notice]End restore wp-core.
+[2026-01-22 04:43:26][notice]Start restoring databases.
+[2026-01-22 04:43:26][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip
+[2026-01-22 04:43:26][notice]Extracting file:beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_all.zip finished.
+[2026-01-22 04:43:26][notice]Extracting file:/home/u637546450/domains/thebeyondbordersreport.com/public_html/wp-content/wpvividbackups/beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_db.zip
+[2026-01-22 04:43:26][notice]Extracting file:/home/u637546450/domains/thebeyondbordersreport.com/public_html/wp-content/wpvividbackups/beond.local_wpvivid-be3830f46c6f0_2026-01-22-04-39_backup_db.zip finished.
+[2026-01-22 04:43:26][notice]End restore databases.
+[2026-01-22 04:43:27][notice]Start restoring databases.
+[2026-01-22 04:43:27][notice]Start restoring sql file offset:0
+[2026-01-22 04:43:27][notice]The test to drop table succeeds.
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_rank_math_internal_meta
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_rank_math_internal_meta
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_actionscheduler_claims
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_actionscheduler_claims
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_actionscheduler_groups
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_actionscheduler_groups
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_links
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_links
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_term_relationships
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_term_relationships
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_actionscheduler_logs
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_actionscheduler_logs
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_commentmeta
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_commentmeta
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_contact_submissions
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_contact_submissions
+[2026-01-22 04:43:27][notice]Drop table if exist tmp7e7f28_newsletter_subscribers
+[2026-01-22 04:43:27][notice]Creating table tmp7e7f28_newsletter_subscribers
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_rank_math_internal_links
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_rank_math_internal_links
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_term_taxonomy
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_term_taxonomy
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_termmeta
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_termmeta
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_terms
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_terms
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_usermeta
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_usermeta
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_users
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_users
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_comments
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_comments
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_actionscheduler_actions
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_actionscheduler_actions
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_options
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_options
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_posts
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_posts
+[2026-01-22 04:43:28][notice]Drop table if exist tmp7e7f28_postmeta
+[2026-01-22 04:43:28][notice]Creating table tmp7e7f28_postmeta
+[2026-01-22 04:43:28][notice]Start replacing table tmp7e7f28_rank_math_internal_meta offset:0
+[2026-01-22 04:43:28][notice]
+[2026-01-22 04:43:28][notice]Counting of rows in tmp7e7f28_rank_math_internal_meta: 20
+[2026-01-22 04:43:28][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:28][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:28][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_rank_math_internal_meta Replaced row: 0\/20;"}
+[2026-01-22 04:43:28][notice]End restore databases.
+[2026-01-22 04:43:30][notice]Start restoring databases.
+[2026-01-22 04:43:30][notice]Start replacing table tmp7e7f28_actionscheduler_claims offset:0
+[2026-01-22 04:43:30][notice]
+[2026-01-22 04:43:30][notice]Counting of rows in tmp7e7f28_actionscheduler_claims: 0
+[2026-01-22 04:43:30][notice]End restore databases.
+[2026-01-22 04:43:31][notice]Start restoring databases.
+[2026-01-22 04:43:31][notice]Start replacing table tmp7e7f28_actionscheduler_groups offset:0
+[2026-01-22 04:43:31][notice]
+[2026-01-22 04:43:31][notice]Counting of rows in tmp7e7f28_actionscheduler_groups: 3
+[2026-01-22 04:43:31][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:31][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:31][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_actionscheduler_groups Replaced row: 0\/3;"}
+[2026-01-22 04:43:31][notice]End restore databases.
+[2026-01-22 04:43:32][notice]Start restoring databases.
+[2026-01-22 04:43:32][notice]Start replacing table tmp7e7f28_links offset:0
+[2026-01-22 04:43:32][notice]
+[2026-01-22 04:43:32][notice]Counting of rows in tmp7e7f28_links: 0
+[2026-01-22 04:43:32][notice]End restore databases.
+[2026-01-22 04:43:33][notice]Start restoring databases.
+[2026-01-22 04:43:33][notice]Start replacing table tmp7e7f28_term_relationships offset:0
+[2026-01-22 04:43:33][notice]
+[2026-01-22 04:43:33][Warning]Skipping table tmp7e7f28_term_relationships
+[2026-01-22 04:43:33][notice]End restore databases.
+[2026-01-22 04:43:34][notice]Start restoring databases.
+[2026-01-22 04:43:34][notice]Start replacing table tmp7e7f28_actionscheduler_logs offset:0
+[2026-01-22 04:43:34][notice]
+[2026-01-22 04:43:34][notice]Counting of rows in tmp7e7f28_actionscheduler_logs: 25
+[2026-01-22 04:43:34][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:34][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:34][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_actionscheduler_logs Replaced row: 0\/25;"}
+[2026-01-22 04:43:34][notice]End restore databases.
+[2026-01-22 04:43:35][notice]Start restoring databases.
+[2026-01-22 04:43:35][notice]Start replacing table tmp7e7f28_commentmeta offset:0
+[2026-01-22 04:43:35][notice]
+[2026-01-22 04:43:35][notice]Counting of rows in tmp7e7f28_commentmeta: 0
+[2026-01-22 04:43:35][notice]End restore databases.
+[2026-01-22 04:43:37][notice]Start restoring databases.
+[2026-01-22 04:43:37][notice]Start replacing table tmp7e7f28_contact_submissions offset:0
+[2026-01-22 04:43:37][notice]
+[2026-01-22 04:43:37][notice]Counting of rows in tmp7e7f28_contact_submissions: 6
+[2026-01-22 04:43:37][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:37][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:37][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_contact_submissions Replaced row: 0\/6;"}
+[2026-01-22 04:43:37][notice]End restore databases.
+[2026-01-22 04:43:38][notice]Start restoring databases.
+[2026-01-22 04:43:38][notice]Start replacing table tmp7e7f28_newsletter_subscribers offset:0
+[2026-01-22 04:43:38][notice]
+[2026-01-22 04:43:38][notice]Counting of rows in tmp7e7f28_newsletter_subscribers: 2
+[2026-01-22 04:43:38][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:38][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:38][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_newsletter_subscribers Replaced row: 0\/2;"}
+[2026-01-22 04:43:38][notice]End restore databases.
+[2026-01-22 04:43:39][notice]Start restoring databases.
+[2026-01-22 04:43:39][notice]Start replacing table tmp7e7f28_rank_math_internal_links offset:0
+[2026-01-22 04:43:39][notice]
+[2026-01-22 04:43:39][notice]Counting of rows in tmp7e7f28_rank_math_internal_links: 0
+[2026-01-22 04:43:39][notice]End restore databases.
+[2026-01-22 04:43:40][notice]Start restoring databases.
+[2026-01-22 04:43:40][notice]Start replacing table tmp7e7f28_term_taxonomy offset:0
+[2026-01-22 04:43:40][notice]
+[2026-01-22 04:43:40][notice]Counting of rows in tmp7e7f28_term_taxonomy: 60
+[2026-01-22 04:43:40][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:40][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:40][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_term_taxonomy Replaced row: 0\/60;"}
+[2026-01-22 04:43:40][notice]End restore databases.
+[2026-01-22 04:43:41][notice]Start restoring databases.
+[2026-01-22 04:43:41][notice]Start replacing table tmp7e7f28_termmeta offset:0
+[2026-01-22 04:43:41][notice]
+[2026-01-22 04:43:41][notice]Counting of rows in tmp7e7f28_termmeta: 144
+[2026-01-22 04:43:41][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:41][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:41][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_termmeta Replaced row: 0\/144;"}
+[2026-01-22 04:43:41][notice]End restore databases.
+[2026-01-22 04:43:43][notice]Start restoring databases.
+[2026-01-22 04:43:43][notice]Start replacing table tmp7e7f28_terms offset:0
+[2026-01-22 04:43:43][notice]
+[2026-01-22 04:43:43][notice]Counting of rows in tmp7e7f28_terms: 60
+[2026-01-22 04:43:43][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:43][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:43][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_terms Replaced row: 0\/60;"}
+[2026-01-22 04:43:43][notice]End restore databases.
+[2026-01-22 04:43:44][notice]Start restoring databases.
+[2026-01-22 04:43:44][notice]Start replacing table tmp7e7f28_usermeta offset:0
+[2026-01-22 04:43:44][notice]
+[2026-01-22 04:43:44][notice]Counting of rows in tmp7e7f28_usermeta: 32
+[2026-01-22 04:43:44][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:44][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:44][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_usermeta Replaced row: 0\/32;"}
+[2026-01-22 04:43:44][notice]End restore databases.
+[2026-01-22 04:43:45][notice]Start restoring databases.
+[2026-01-22 04:43:45][notice]Start replacing table tmp7e7f28_users offset:0
+[2026-01-22 04:43:45][notice]
+[2026-01-22 04:43:45][notice]Counting of rows in tmp7e7f28_users: 1
+[2026-01-22 04:43:45][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:45][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:45][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_users Replaced row: 0\/1;"}
+[2026-01-22 04:43:45][notice]End restore databases.
+[2026-01-22 04:43:46][notice]Start restoring databases.
+[2026-01-22 04:43:46][notice]Start replacing table tmp7e7f28_comments offset:0
+[2026-01-22 04:43:46][notice]
+[2026-01-22 04:43:46][notice]Counting of rows in tmp7e7f28_comments: 0
+[2026-01-22 04:43:46][notice]End restore databases.
+[2026-01-22 04:43:47][notice]Start restoring databases.
+[2026-01-22 04:43:47][notice]Start replacing table tmp7e7f28_actionscheduler_actions offset:0
+[2026-01-22 04:43:47][notice]
+[2026-01-22 04:43:47][notice]Counting of rows in tmp7e7f28_actionscheduler_actions: 9
+[2026-01-22 04:43:47][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:47][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:47][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_actionscheduler_actions Replaced row: 0\/9;"}
+[2026-01-22 04:43:47][notice]End restore databases.
+[2026-01-22 04:43:49][notice]Start restoring databases.
+[2026-01-22 04:43:49][notice]Start replacing table tmp7e7f28_options offset:0
+[2026-01-22 04:43:49][notice]
+[2026-01-22 04:43:49][notice]Counting of rows in tmp7e7f28_options: 212
+[2026-01-22 04:43:49][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:49][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:49][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_options Replaced row: 0\/212;"}
+[2026-01-22 04:43:49][notice]End restore databases.
+[2026-01-22 04:43:50][notice]Start restoring databases.
+[2026-01-22 04:43:50][notice]Start replacing table tmp7e7f28_posts offset:0
+[2026-01-22 04:43:50][notice]
+[2026-01-22 04:43:50][notice]Counting of rows in tmp7e7f28_posts: 634
+[2026-01-22 04:43:50][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:50][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:50][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_posts Replaced row: 0\/634;"}
+[2026-01-22 04:43:50][notice]End restore databases.
+[2026-01-22 04:43:51][notice]Start restoring databases.
+[2026-01-22 04:43:51][notice]Start replacing table tmp7e7f28_postmeta offset:0
+[2026-01-22 04:43:51][notice]
+[2026-01-22 04:43:51][notice]Counting of rows in tmp7e7f28_postmeta: 1432
+[2026-01-22 04:43:51][notice]Replacing the row in 0 line.
+[2026-01-22 04:43:51][notice]Replacing row completed. Current row:5000
+[2026-01-22 04:43:51][notice]{"result":"success","replace_row":5000,"max_replace_row":10000,"current_replace_table_finish":true,"last_msg":"Importing sql file table: tmp7e7f28_postmeta Replaced row: 0\/1432;"}
+[2026-01-22 04:43:51][notice]
+[2026-01-22 04:43:51][notice]UPDATE tmp7e7f28_options SET option_value="https://thebeyondbordersreport.com" WHERE option_name="siteurl";
+[2026-01-22 04:43:51][notice]update query len:107
+[2026-01-22 04:43:51][notice]UPDATE tmp7e7f28_options SET option_value="https://thebeyondbordersreport.com" WHERE option_name="home";
+[2026-01-22 04:43:51][notice]update query len:104
+[2026-01-22 04:43:51][notice]Restore db success
+[2026-01-22 04:43:51][notice]End restore databases.
+[2026-01-22 04:43:52][notice]Restore db success,now start rename temp table name prefix to new site prefix.
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_actionscheduler_actions
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_actionscheduler_claims
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_actionscheduler_groups
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_actionscheduler_logs
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_commentmeta
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_comments
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_contact_submissions
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_links
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_newsletter_subscribers
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_options
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_postmeta
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_posts
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_rank_math_internal_links
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_rank_math_internal_meta
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_term_relationships
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_term_taxonomy
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_termmeta
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_terms
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_usermeta
+[2026-01-22 04:43:52][notice]DROP TABLE IF EXISTS wp_users
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_actionscheduler_actions TO wp_actionscheduler_actions
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_actionscheduler_claims TO wp_actionscheduler_claims
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_actionscheduler_groups TO wp_actionscheduler_groups
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_actionscheduler_logs TO wp_actionscheduler_logs
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_commentmeta TO wp_commentmeta
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_comments TO wp_comments
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_contact_submissions TO wp_contact_submissions
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_links TO wp_links
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_newsletter_subscribers TO wp_newsletter_subscribers
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_options TO wp_options
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_postmeta TO wp_postmeta
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_posts TO wp_posts
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_rank_math_internal_links TO wp_rank_math_internal_links
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_rank_math_internal_meta TO wp_rank_math_internal_meta
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_term_relationships TO wp_term_relationships
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_term_taxonomy TO wp_term_taxonomy
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_termmeta TO wp_termmeta
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_terms TO wp_terms
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_usermeta TO wp_usermeta
+[2026-01-22 04:43:52][notice]RENAME TABLE tmp7e7f28_users TO wp_users
+[2026-01-22 04:43:52][notice]Replacing table prefix succeeded.
+[2026-01-22 04:43:53][notice]Delete migration option failed.
+[2026-01-22 04:43:53][notice]Deleting temp files.

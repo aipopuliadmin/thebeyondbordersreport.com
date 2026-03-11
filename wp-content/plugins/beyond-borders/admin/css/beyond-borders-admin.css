@@ -1,0 +1,31 @@
+/**
+ * Admin styles for Beyond Borders plugin.
+ *
+ * @package Beyond_Borders
+ */
+
+.beyond-borders-admin-header {
+    background: #003366;
+    color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.beyond-borders-admin-header h2 {
+    color: #C9A961;
+    margin-top: 0;
+}
+
+.beyond-borders-admin-header p {
+    color: #FAF8F5;
+    margin-bottom: 0;
+}
+
+.color-picker {
+    max-width: 100px;
+}
+
+.form-table th {
+    width: 220px;
+}

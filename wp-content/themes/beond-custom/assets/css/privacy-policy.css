@@ -1,0 +1,340 @@
+/**
+ * Privacy Policy Page Styles
+ * Supports light/dark theme switching
+ *
+ * @package Beond_Custom
+ */
+
+/* ============================================
+   Privacy Policy Page Container
+   ============================================ */
+
+.privacy-policy-page .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+/* ============================================
+   Hero Section (using about-hero class)
+   ============================================ */
+
+.privacy-policy-page .about-hero {
+    background-color: #F9FAFB;
+    padding: 120px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .privacy-policy-page .about-hero {
+    background: var(--navy-deep);
+}
+
+.privacy-policy-page .about-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.privacy-policy-page .hero-label {
+    display: inline-block;
+    color: #D4AF37;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+[data-theme="dark"] .privacy-policy-page .hero-label {
+    color: #F4CA64;
+}
+
+.privacy-policy-page .hero-title {
+    font-family: var(--font-headline), Georgia, serif;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    max-width: 800px;
+    color: #1F2937;
+}
+
+[data-theme="dark"] .privacy-policy-page .hero-title {
+    color: #FFFFFF;
+}
+
+.privacy-policy-page .hero-subtitle {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #6B7280;
+    max-width: 700px;
+    margin-bottom: 40px;
+}
+
+[data-theme="dark"] .privacy-policy-page .hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.privacy-policy-page .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(31, 41, 55, 0.2);
+}
+
+[data-theme="dark"] .privacy-policy-page .hero-stats {
+    border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.privacy-policy-page .stat-item {
+    text-align: left;
+}
+
+.privacy-policy-page .stat-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #D4AF37;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+[data-theme="dark"] .privacy-policy-page .stat-number {
+    color: #F4CA64;
+}
+
+.privacy-policy-page .stat-label {
+    font-size: 14px;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+[data-theme="dark"] .privacy-policy-page .stat-label {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ============================================
+   Content Section (using mission-section class)
+   ============================================ */
+
+.privacy-policy-page .mission-section {
+    padding: 0;
+    background: #FFFFFF;
+}
+
+[data-theme="dark"] .privacy-policy-page .mission-section {
+    background: var(--navy-deep);
+}
+
+/* Content Typography */
+.privacy-policy-page .privacy-content h2 {
+    font-family: var(--font-headline), Georgia, serif;
+    font-size: 32px;
+    font-weight: 600;
+    color: #1F2937;
+    margin: 48px 0 24px 0;
+    padding-top: 16px;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content h2 {
+    color: #F4CA64;
+}
+
+.privacy-policy-page .privacy-content h2:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.privacy-policy-page .privacy-content h3 {
+    font-family: var(--font-headline), Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1F2937;
+    margin: 32px 0 16px 0;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content h3 {
+    color: #FFFFFF;
+}
+
+.privacy-policy-page .privacy-content h4 {
+    font-family: var(--font-ui), sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+    margin: 24px 0 12px 0;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content h4 {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.privacy-policy-page .privacy-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4B5563;
+    margin-bottom: 20px;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content p {
+    color: var(--cream);
+}
+
+.privacy-policy-page .privacy-content ul,
+.privacy-policy-page .privacy-content ol {
+    margin: 20px 0 24px 24px;
+    color: #4B5563;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content ul,
+[data-theme="dark"] .privacy-policy-page .privacy-content ol {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.privacy-policy-page .privacy-content li {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    padding-left: 8px;
+}
+
+.privacy-policy-page .privacy-content ul li {
+    list-style-type: disc;
+}
+
+.privacy-policy-page .privacy-content ol li {
+    list-style-type: decimal;
+}
+
+.privacy-policy-page .privacy-content a {
+    color: #D4AF37;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.privacy-policy-page .privacy-content a:hover {
+    color: #B8941F;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content a {
+    color: #F4CA64;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content a:hover {
+    color: #FFFFFF;
+}
+
+.privacy-policy-page .privacy-content strong {
+    font-weight: 600;
+    color: #1F2937;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content strong {
+    color: #F4CA64;
+}
+
+.privacy-policy-page .privacy-content blockquote {
+    background: #F9FAFB;
+    border-left: 4px solid #D4AF37;
+    padding: 20px 24px;
+    margin: 24px 0;
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+}
+
+[data-theme="dark"] .privacy-policy-page .privacy-content blockquote {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: #F4CA64;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 1024px) {
+    .privacy-policy-page .container {
+        padding: 0 40px;
+    }
+
+    .privacy-policy-page .hero-title {
+        font-size: 48px;
+    }
+
+    .privacy-policy-page .hero-subtitle {
+        font-size: 20px;
+    }
+
+    .privacy-policy-page .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .privacy-policy-page .stat-number {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .privacy-policy-page .container {
+        padding: 0 24px;
+    }
+
+    .privacy-policy-page .about-hero {
+        padding: 80px 0 60px;
+    }
+
+    .privacy-policy-page .hero-title {
+        font-size: 40px;
+    }
+
+    .privacy-policy-page .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .privacy-policy-page .hero-stats {
+        margin-top: 40px;
+        padding-top: 32px;
+    }
+
+    .privacy-policy-page .mission-section {
+        padding: 60px 0;
+    }
+
+    .privacy-policy-page .privacy-content h2 {
+        font-size: 28px;
+        margin: 40px 0 20px 0;
+    }
+
+    .privacy-policy-page .privacy-content h3 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 640px) {
+    .privacy-policy-page .hero-title {
+        font-size: 32px;
+    }
+
+    .privacy-policy-page .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .privacy-policy-page .hero-stats {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .privacy-policy-page .stat-number {
+        font-size: 36px;
+    }
+
+    .privacy-policy-page .privacy-content h2 {
+        font-size: 24px;
+    }
+
+    .privacy-policy-page .privacy-content h3 {
+        font-size: 20px;
+    }
+}

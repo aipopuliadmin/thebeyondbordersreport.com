@@ -1,0 +1,126 @@
+/* ============================================
+   KEY POINTS COMPONENT
+   ============================================ */
+
+.article-key-points {
+    background: #ffffff;
+    border-left: 4px solid #003265;
+    padding: 24px 28px;
+    margin: 32px 0;
+    box-shadow: 0 2px 8px rgba(0, 50, 101, 0.08);
+    border-radius: 0 4px 4px 0;
+}
+
+[data-theme="dark"] .article-key-points {
+    background: var(--faq-card-bg);
+    border-left-color: #D4AF37;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.key-points-header {
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #003265;
+}
+
+[data-theme="dark"] .key-points-header {
+    border-bottom-color: rgba(212, 175, 55, 0.3);
+}
+
+.key-points-title {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #003265;
+    margin: 0;
+}
+
+[data-theme="dark"] .key-points-title {
+    color: #D4AF37;
+}
+
+.key-points-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.key-point-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+    line-height: 1.6;
+}
+
+.key-point-item:last-child {
+    margin-bottom: 0;
+}
+
+.key-point-bullet {
+    font-size: 24px;
+    font-weight: 700;
+    color: #D4AF37;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: -2px;
+}
+
+[data-theme="dark"] .key-point-bullet {
+    color: #D4AF37;
+}
+
+.key-point-text {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    color: #1A1A2E;
+    flex: 1;
+}
+
+[data-theme="dark"] .key-point-text {
+    color: #E5E7EB;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .article-key-points {
+        padding: 20px 20px;
+        margin: 24px 0;
+    }
+    
+    .key-point-text {
+        font-size: 15px;
+    }
+    
+    .key-points-title {
+        font-size: 13px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .article-key-points {
+        border: 2px solid #003265;
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+}
+
+/* Animation on scroll (optional) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.article-key-points.animate-in {
+    animation: fadeInUp 0.6s ease-out;
+}

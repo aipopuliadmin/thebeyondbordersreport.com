@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Visualization - IARD Style</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #ffffff;
+            overflow: auto;
+        }
+        #canvas-container {
+            width: 100%;
+            min-height: 800px;
+            position: relative;
+            padding: 50px;
+        }
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        .node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .node:hover {
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.3));
+        }
+        .node-circle {
+            transition: all 0.3s ease;
+        }
+        .node:hover .node-circle {
+            stroke: #333;
+            stroke-width: 2;
+        }
+        .node-image {
+            pointer-events: none;
+        }
+        .node-label {
+            font-size: 12px;
+            font-weight: 600;
+            fill: #333;
+            text-anchor: middle;
+            pointer-events: none;
+            user-select: none;
+        }
+        .connection-line {
+            stroke: #ddd;
+            stroke-width: 1;
+            fill: none;
+        }
+        .division-label {
+            font-size: 14px;
+            font-weight: normal;
+            fill: #999;
+            text-anchor: middle;
+        }
+        .center-node .node-circle {
+            stroke: #000;
+            stroke-width: 2;
+        }
+        .center-node .node-label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container">
+        <svg id="visualization" viewBox="0 0 1600 1200"></svg>
+    </div>
+    <div class="tooltip" id="tooltip"></div>
+
+    <script>
+        // Configuration
+        const CONFIG = {
+            CENTER: { x: 800, y: 600 },
+            RADIUS: {
+                CENTER: 80,
+                DIVISION: 50,
+                BRAND: 30
+            },
+            DISTANCE: {
+                DIVISION_FROM_CENTER: 280,
+                BRAND_FROM_DIVISION: 180
+            },
+            LOGO_SIZE: {
+                CENTER: 120,
+                DIVISION: 70,
+                BRAND: 40
+            }
+        };
+
+        let brandData = [];
+        let svg, tooltip;
+
+        // Listen for data from parent window
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'brandData') {
+                brandData = event.data.data;
+                initVisualization();
+            }
+        });
+
+        function initVisualization() {
+            svg = document.getElementById('visualization');
+            tooltip = document.getElementById('tooltip');
+            
+            if (!brandData || brandData.length === 0) {
+                svg.innerHTML = '<text x="800" y="600" text-anchor="middle" fill="#999" font-size="20">No data available</text>';
+                return;
+            }
+
+            renderVisualization();
+        }
+
+        function renderVisualization() {
+            svg.innerHTML = '';
+            
+            // Find root node (usually LVMH or the first parent)
+            const rootNode = brandData.find(d => d.name === 'LVMH') || brandData[0];
+            
+            if (!rootNode) return;
+
+            // Draw root/center node
+            drawNode(rootNode, CONFIG.CENTER.x, CONFIG.CENTER.y, CONFIG.RADIUS.CENTER, 'center-node', true);
+
+            // Get divisions (children of root)
+            const divisions = rootNode.children || brandData;
+            const divisionCount = divisions.length;
+
+            divisions.forEach((division, index) => {
+                const angle = (index / divisionCount) * 2 * Math.PI - Math.PI / 2;
+                const divX = CONFIG.CENTER.x + Math.cos(angle) * CONFIG.DISTANCE.DIVISION_FROM_CENTER;
+                const divY = CONFIG.CENTER.y + Math.sin(angle) * CONFIG.DISTANCE.DIVISION_FROM_CENTER;
+
+                // Draw connection line from center to division
+                drawLine(CONFIG.CENTER.x, CONFIG.CENTER.y, divX, divY);
+
+                // Draw division node
+                drawNode(division, divX, divY, CONFIG.RADIUS.DIVISION, 'division-node');
+
+                // Draw division label
+                const labelY = divY + CONFIG.RADIUS.DIVISION + 25;
+                createText(division.name, divX, labelY, 'division-label');
+
+                // Draw brands for this division
+                const brands = division.children || [];
+                const brandCount = brands.length;
+
+                brands.forEach((brand, brandIndex) => {
+                    // Calculate brand position in a circle around the division
+                    const brandAngle = (brandIndex / brandCount) * 2 * Math.PI + angle;
+                    const brandX = divX + Math.cos(brandAngle) * CONFIG.DISTANCE.BRAND_FROM_DIVISION;
+                    const brandY = divY + Math.sin(brandAngle) * CONFIG.DISTANCE.BRAND_FROM_DIVISION;
+
+                    // Draw connection line from division to brand
+                    drawLine(divX, divY, brandX, brandY);
+
+                    // Draw brand node
+                    drawNode(brand, brandX, brandY, CONFIG.RADIUS.BRAND, 'brand-node');
+                });
+            });
+        }
+
+        function drawLine(x1, y1, x2, y2) {
+            const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', x1);
+            line.setAttribute('y1', y1);
+            line.setAttribute('x2', x2);
+            line.setAttribute('y2', y2);
+            line.setAttribute('class', 'connection-line');
+            svg.appendChild(line);
+        }
+
+        function drawNode(data, x, y, radius, className, isCenter = false) {
+            const group = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+            group.setAttribute('class', `node ${className}`);
+            group.setAttribute('data-name', data.name);
+
+            // Draw circle
+            const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+            circle.setAttribute('cx', x);
+            circle.setAttribute('cy', y);
+            circle.setAttribute('r', radius);
+            circle.setAttribute('fill', data.color || '#ffffff');
+            circle.setAttribute('stroke', '#ccc');
+            circle.setAttribute('stroke-width', '1');
+            circle.setAttribute('class', 'node-circle');
+            group.appendChild(circle);
+
+            // Draw logo if available
+            if (data.logo_url) {
+                const logoSize = isCenter ? CONFIG.LOGO_SIZE.CENTER : 
+                               className === 'division-node' ? CONFIG.LOGO_SIZE.DIVISION : 
+                               CONFIG.LOGO_SIZE.BRAND;
+                
+                const image = document.createElementNS('http://www.w3.org/2000/svg', 'image');
+                image.setAttributeNS('http://www.w3.org/1999/xlink', 'href', data.logo_url);
+                image.setAttribute('x', x - logoSize / 2);
+                image.setAttribute('y', y - logoSize / 2);
+                image.setAttribute('width', logoSize);
+                image.setAttribute('height', logoSize);
+                image.setAttribute('class', 'node-image');
+                group.appendChild(image);
+            } else {
+                // Show text if no logo (for small nodes)
+                if (!isCenter && className === 'brand-node') {
+                    const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                    text.setAttribute('x', x);
+                    text.setAttribute('y', y + 4);
+                    text.setAttribute('class', 'node-label');
+                    text.setAttribute('font-size', '10');
+                    text.textContent = data.name.substring(0, 3).toUpperCase();
+                    group.appendChild(text);
+                }
+            }
+
+            // Add hover tooltip
+            group.addEventListener('mouseenter', function(e) {
+                const tooltipText = data.name + (data.description ? ': ' + data.description : '');
+                tooltip.textContent = tooltipText;
+                tooltip.style.opacity = '1';
+            });
+
+            group.addEventListener('mousemove', function(e) {
+                tooltip.style.left = (e.pageX + 15) + 'px';
+                tooltip.style.top = (e.pageY + 15) + 'px';
+            });
+
+            group.addEventListener('mouseleave', function() {
+                tooltip.style.opacity = '0';
+            });
+
+            // Click handler
+            if (data.website) {
+                group.style.cursor = 'pointer';
+                group.addEventListener('click', function() {
+                    window.open(data.website, '_blank');
+                });
+            }
+
+            svg.appendChild(group);
+        }
+
+        function createText(text, x, y, className) {
+            const textEl = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            textEl.setAttribute('x', x);
+            textEl.setAttribute('y', y);
+            textEl.setAttribute('class', className);
+            textEl.textContent = text;
+            svg.appendChild(textEl);
+        }
+
+        // Auto-initialize if we're testing standalone
+        if (window.location.search.includes('test=1')) {
+            // Sample test data
+            brandData = [{
+                name: 'LVMH',
+                color: '#1a1a1a',
+                children: [
+                    {
+                        name: 'Fashion & Leather Goods',
+                        color: '#8B4513',
+                        children: [
+                            { name: 'Louis Vuitton', color: '#654321', logo_url: '' },
+                            { name: 'Dior', color: '#D4AF37', logo_url: '' }
+                        ]
+                    }
+                ]
+            }];
+            initVisualization();
+        }
+    </script>
+</body>
+</html>

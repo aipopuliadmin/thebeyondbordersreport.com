@@ -1,0 +1,273 @@
+/*
+Theme Name: Beyond Borders
+Theme URI: https://thebeyondbordersreport.com
+Author: Beyond Borders Report
+Author URI: https://thebeyondbordersreport.com
+Description: Premium editorial platform theme for global business, travel, aviation, and luxury retail coverage. Features a sophisticated navy and gold color palette with elegant typography designed for C-suite executives and affluent readers.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: beond-custom
+Tags: editorial, magazine, news, business, luxury, two-columns, custom-colors, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
+
+Beyond Borders Custom Theme, Copyright 2026 Beyond Borders Report
+Beyond Borders Custom is distributed under the terms of the GNU GPL
+*/
+
+/* ================================
+   CSS VARIABLES - Design System
+   ================================ */
+:root {
+    /* Color Palette */
+    --navy-deep: #0A1628;
+    --navy-primary: #003265;
+    --navy-medium: #00274D;
+    --navy-light: #1A4D5C;
+    --gold-primary: #C9A961;
+    --gold-champagne: #D4AF37;
+    --gold-dark: #B8941F;
+    --white: #FFFFFF;
+    --cream: #FAF8F5;
+    --light-gray: #E8E8E8;
+    --medium-gray: #6B7280;
+    --charcoal-dark: #1A1A2E;
+    --text-primary: #0A0A0A;
+    --text-secondary: #374151;
+    --text-tertiary: #6B7280;
+    
+    /* Typography */
+    --font-headline: 'Playfair Display', serif;
+    --font-body: 'Lora', serif;
+    --font-ui: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 40px;
+    --spacing-xl: 64px;
+    
+    /* Layout */
+    --max-width: 1400px;
+    --content-width: 720px;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ================================
+   RESET & BASE STYLES
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--charcoal-dark);
+    line-height: 1.7;
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+[data-theme="dark"] body {
+    background-color: var(--navy-deep);
+    color: var(--cream);
+}
+
+/* ================================
+   TYPOGRAPHY
+   ================================ */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headline);
+    color: var(--navy-primary);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Gutenberg Block Headings */
+.wp-block-heading {
+    font-family: var(--font-headline);
+    color: var(--navy-primary);
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+[data-theme="dark"] .wp-block-heading {
+    color: #E5E7EB;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+a {
+    color: var(--navy-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--gold-primary);
+}
+
+/* ================================
+   LAYOUT
+   ================================ */
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex: 1;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    width: 100%;
+}
+
+.content-wrapper {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ================================
+   WORDPRESS CORE ALIGNMENT
+   ================================ */
+.alignleft {
+    float: left;
+    margin-right: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.alignright {
+    float: right;
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: var(--spacing-sm);
+}
+
+.alignwide {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignfull {
+    max-width: 100%;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+/* ================================
+   ACCESSIBILITY
+   ================================ */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+    background-color: var(--cream);
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: var(--navy-primary);
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 32px;
+        --spacing-xl: 48px;
+    }
+    
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    
+    .site-content {
+        padding: var(--spacing-md) var(--spacing-sm);
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.25rem; }
+    
+    .container {
+        padding: 0 12px;
+    }
+}

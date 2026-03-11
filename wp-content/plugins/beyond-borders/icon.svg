@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- Transparent background -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#C9A961;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Overlapping BB Design -->
+  <g>
+    <!-- First B (larger, background) -->
+    <text x="65" y="180" font-family="serif" font-size="140" font-weight="bold" fill="url(#goldGradient)" opacity="0.5">B</text>
+    
+    <!-- Second B (smaller, foreground) -->
+    <text x="115" y="180" font-family="serif" font-size="140" font-weight="bold" fill="#C9A961">B</text>
+  </g>
+  
+  <!-- Accent corner elements -->
+  <g stroke="#D4AF37" stroke-width="3" fill="none">
+    <path d="M 30 70 L 30 30 L 70 30"/>
+    <path d="M 186 226 L 226 226 L 226 186"/>
+  </g>
+  
+  <!-- Small dots decoration -->
+  <circle cx="210" cy="50" r="4" fill="#C9A961" opacity="0.6"/>
+  <circle cx="225" cy="50" r="3" fill="#D4AF37" opacity="0.6"/>
+  <circle cx="46" cy="210" r="4" fill="#C9A961" opacity="0.6"/>
+  <circle cx="46" cy="225" r="3" fill="#D4AF37" opacity="0.6"/>
+</svg>

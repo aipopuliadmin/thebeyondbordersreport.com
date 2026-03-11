@@ -1,0 +1,114 @@
+<?php
+/**
+ * Curated Review Template - Troubleshooting Guide
+ * 
+ * Check Browser Console for Debugging
+ */
+
+// This is just a reference guide - not a file to run
+?>
+
+TROUBLESHOOTING GUIDE FOR OPTION 2
+===================================
+
+✅ WHAT SHOULD HAPPEN:
+======================
+1. Go to WordPress Posts → Add New
+2. In the editor, scroll down to "Categories" panel on right
+3. Select "Curated Review" category (or one of its children)
+4. GREEN NOTIFICATION appears: "✅ Curated Review template applied!"
+5. Editor content area fills with template blocks
+
+🔍 HOW TO DEBUG:
+================
+
+STEP 1: Open Browser Console
+-----------------------------
+- Chrome/Firefox: Press F12 → Go to "Console" tab
+- You should see log messages starting with:
+  ✓ Curated Review Template Script Loaded
+  📁 Post categories: [24]
+  🎯 Has Curated Review category? true
+  ✅ Applying Curated Review template...
+  ✅ Template applied successfully!
+
+STEP 2: Check if Script is Loading
+-----------------------------------
+In Console, type:
+  console.log(wp.domReady)
+
+If you see: "ƒ domReady(callback) { ... }" → Script is loaded ✓
+If you see: "undefined" → Script NOT loading ✗
+
+STEP 3: Verify Category is Detected
+-----------------------------------
+In Console, after selecting "Curated Review" category, check for:
+  📁 Post categories: [24]   ← Should show 24 (Curated Review ID)
+  🎯 Has Curated Review category? true
+
+STEP 4: Manual Test in Console
+-------------------------------
+Paste this in Console to test manually:
+  const { dispatch } = wp.data;
+  const blocks = [
+    wp.blocks.createBlock('core/heading', { content: 'Test Template', level: 2 })
+  ];
+  dispatch('core/block-editor').insertBlocks(blocks);
+
+If blocks appear in editor → Block insertion works ✓
+
+⚠️ COMMON ISSUES & FIXES:
+=========================
+
+ISSUE #1: Script shows "undefined" in console
+---------------------------------------------
+Fix: Clear cache and hard refresh
+- Press: Ctrl+Shift+R (Windows/Linux) or Cmd+Shift+R (Mac)
+- Or: Ctrl+F5
+
+ISSUE #2: Categories not showing in post
+-----------------------------------------
+Fix: Make sure category panel is visible
+- Click the "Post" button (top right) → Click gear icon (settings)
+- Make sure "Categories" panel is ENABLED
+
+ISSUE #3: Template applies but blocks look wrong
+------------------------------------------------  
+Fix: Check if Gutenberg has the blocks
+- Some older WordPress versions don't support core/table blocks
+- Check Dashboard → About page → WordPress Version
+- Should be 5.8+ for full block support
+
+ISSUE #4: Notification doesn't appear
+----------------------------------------
+Fix: That's OK - check console instead
+- Look for "✅ Curated Review template applied!" in console
+- The blocks should still be inserted even if notice didn't show
+
+🔧 TECHNICAL DETAILS:
+======================
+
+Category IDs Being Monitored:
+- 24: Curated Review (parent)
+- 25: Beauty & Fragrance
+- 26: Wines, Spirits & Tobacco
+- 27: Fashion, Luxury & Accessories
+- 28: Confectionery & Gourmet
+- 29: Consumer Tech & Travel Essentials
+- 30: Campaigns & Launches
+
+JavaScript Hooks Used:
+- wp.domReady() → Runs after DOM ready
+- wp.data.subscribe() → Listens to state changes
+- select('core/editor').getCurrentPost() → Gets current post data
+- dispatch('core/block-editor').insertBlocks() → Inserts blocks
+
+✅ If you see these in console, it's working:
+==============================================
+✓ Curated Review Template Script Loaded
+✓ Post categories: [24]
+✓ Has Curated Review category? true
+✓ Post is empty, inserting template blocks...
+✓ Template applied successfully!
+
+Report console output if still having issues!

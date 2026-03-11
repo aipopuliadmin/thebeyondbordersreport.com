@@ -1,0 +1,217 @@
+/**
+ * Minimal Footer Styles
+ * Clean and simple footer design
+ * 
+ * @package Beond_Custom
+ */
+
+/* ========================================
+   Footer Minimal
+   ======================================== */
+
+.footer-minimal {
+    background: var(--white);
+    color: var(--text-primary);
+    padding: 60px 40px;
+    border-top: 1px solid var(--light-gray);
+}
+
+.footer-minimal-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-minimal-content {
+    text-align: center;
+}
+
+/* ========================================
+   Footer Minimal Brand
+   ======================================== */
+
+.footer-minimal-brand {
+    margin-bottom: 32px;
+}
+
+.footer-minimal-brand .footer-logo-link {
+    display: inline-block;
+}
+
+.footer-minimal-brand .footer-logo {
+    max-width: 150px !important;
+    height: auto !important;
+    margin-bottom: 10px !important;
+}
+
+.site-title {
+    font-family: var(--font-headline);
+    font-size: 24px;
+    color: var(--navy-primary);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.site-tagline {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* ========================================
+   Footer Minimal Main Content
+   ======================================== */
+
+.footer-minimal-main {
+    margin-top: 32px;
+}
+
+/* ========================================
+   Social Links
+   ======================================== */
+
+.footer-social-links {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-gray);
+    border-radius: 50%;
+    color: var(--navy-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.social-link:hover {
+    background: var(--gold-champagne);
+    color: var(--navy-deep);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   Copyright
+   ======================================== */
+
+.footer-minimal-copyright {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    margin-bottom: 16px;
+}
+
+/* ========================================
+   Footer Navigation
+   ======================================== */
+
+.footer-minimal-nav {
+    margin-top: 20px;
+}
+
+.footer-minimal-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-minimal-menu li {
+    margin: 0;
+}
+
+.footer-minimal-menu a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-minimal-menu a:hover {
+    color: var(--gold-champagne);
+}
+
+/* Footer minimal links (when no menu) */
+.footer-minimal-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.footer-minimal-links a {
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-minimal-links a:hover {
+    color: var(--gold-champagne);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+    .footer-minimal {
+        padding: 40px 30px;
+    }
+    
+    .footer-minimal-menu,
+    .footer-minimal-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+}
+
+/* ========================================
+   Dark Theme Support
+   ======================================== */
+
+[data-theme="dark"] .footer-minimal {
+    background: var(--charcoal-dark);
+    border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .site-title {
+    color: var(--white);
+}
+
+[data-theme="dark"] .site-tagline {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="dark"] .footer-minimal-copyright {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .social-link {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+[data-theme="dark"] .social-link:hover {
+    background: var(--gold-champagne);
+    color: var(--charcoal-dark);
+}
+
+[data-theme="dark"] .footer-minimal-menu a,
+[data-theme="dark"] .footer-minimal-links a {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+[data-theme="dark"] .footer-minimal-menu a:hover,
+[data-theme="dark"] .footer-minimal-links a:hover {
+    color: var(--gold-champagne);
+}

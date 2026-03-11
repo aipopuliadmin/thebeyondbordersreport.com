@@ -1,0 +1,385 @@
+/**
+ * Dark Footer Styles - Night Mode Optimized
+ * Dark-themed footer with proper background matching
+ * 
+ * @package Beond_Custom
+ */
+
+/* ========================================
+   Footer Dark Main
+   ======================================== */
+
+.footer-dark {
+    background: var(--navy-deep);
+    color: var(--white);
+    padding: 0;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+}
+
+/* ========================================
+   Newsletter Dark Section
+   ======================================== */
+
+.footer-newsletter-dark {
+    background: var(--navy-deep);
+    padding: 60px 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-newsletter-dark-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.newsletter-dark-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.newsletter-dark-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(201, 169, 97, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.newsletter-dark-icon svg {
+    color: var(--gold-champagne);
+}
+
+.newsletter-dark-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.newsletter-dark-text h2 {
+    font-family: var(--font-headline);
+    font-size: 32px;
+    color: var(--gold-champagne);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.newsletter-dark-text p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+}
+
+.newsletter-dark-form {
+    flex: 1;
+    min-width: 350px;
+}
+
+.newsletter-dark-input-group {
+    display: flex;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.newsletter-dark-input-group:focus-within {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--gold-champagne);
+    box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.1);
+}
+
+.newsletter-dark-input-group input {
+    flex: 1;
+    padding: 16px 20px;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 15px;
+    font-family: var(--font-ui);
+}
+
+.newsletter-dark-input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.newsletter-dark-input-group input:focus {
+    outline: none;
+}
+
+.newsletter-dark-input-group button {
+    padding: 16px 24px;
+    background: var(--gold-champagne);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.newsletter-dark-input-group button:hover {
+    background: var(--gold-dark);
+}
+
+.newsletter-dark-input-group button svg {
+    color: var(--charcoal-dark);
+}
+
+/* ========================================
+   Footer Dark Main Content
+   ======================================== */
+
+.footer-dark-main {
+    background: var(--charcoal-dark);
+    padding: 80px 60px;
+}
+
+.footer-dark-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-dark-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+/* ========================================
+   Footer Dark Brand
+   ======================================== */
+
+.footer-dark-brand {
+    padding-right: 40px;
+}
+
+.footer-dark-brand .footer-logo-link {
+    display: block;
+}
+
+.footer-dark-brand .footer-logo {
+    /* Logo should be light/white version for dark background */
+    /* No filter needed - use dark_logo_image_id which should already be light colored */
+    max-width: 180px !important;
+    height: auto !important;
+    margin-bottom: 15px !important;
+}
+
+.footer-dark-logo {
+    font-family: var(--font-headline);
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.footer-dark-brand .footer-tagline {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--gold-champagne);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.footer-dark-tagline {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 24px;
+}
+
+/* ========================================
+   Footer Dark Social Links
+   ======================================== */
+
+.footer-dark-social {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.footer-dark-social-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.footer-dark-social-link:hover {
+    background: var(--gold-champagne);
+    border-color: var(--gold-champagne);
+    color: var(--charcoal-dark);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   Footer Dark Columns
+   ======================================== */
+
+.footer-dark-column h4,
+.footer-dark-column .widget-title {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    color: var(--gold-champagne);
+}
+
+.footer-dark-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-dark-column li {
+    margin-bottom: 12px;
+}
+
+.footer-dark-column a {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.footer-dark-column a:hover {
+    color: var(--gold-champagne);
+    transform: translateX(3px);
+}
+
+/* Widget Styles */
+.footer-dark-column .widget {
+    margin-bottom: 0;
+}
+
+.footer-dark-column .widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   Footer Dark Bottom
+   ======================================== */
+
+.footer-dark-bottom {
+    background: #0a0a0a;
+    padding: 30px 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-dark-bottom-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-dark-copyright {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+}
+
+.footer-dark-meta {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-dark-meta a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-dark-meta a:hover {
+    color: var(--gold-champagne);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .footer-dark-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .footer-dark-brand {
+        grid-column: 1 / -1;
+        padding-right: 0;
+    }
+    
+    .newsletter-dark-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-dark-text h2 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-dark-main {
+        padding: 60px 30px;
+    }
+    
+    .footer-newsletter-dark {
+        padding: 40px 30px;
+    }
+    
+    .footer-dark-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-dark-bottom {
+        padding: 20px 30px;
+    }
+    
+    .footer-dark-bottom-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-dark-text h2 {
+        font-size: 24px;
+    }
+    
+    .newsletter-dark-text p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-dark-input-group {
+        flex-direction: column;
+    }
+    
+    .newsletter-dark-input-group button {
+        padding: 14px 20px;
+    }
+}

@@ -1,0 +1,389 @@
+Last Updated: January 20, 2026
+
+Introduction
+
+This Cookies Policy explains how Beyond Borders Report ("we," "us," or "our") uses cookies and similar tracking technologies when you visit our website, mobile applications, and other online services (collectively, "Services"). This policy should be read together with our Privacy Policy and Terms and Conditions.
+
+By using our Services, you consent to the use of cookies as described in this policy. If you do not agree to our use of cookies, you should adjust your browser settings accordingly or refrain from using our Services.
+
+What Are Cookies?
+
+Definition
+
+Cookies are small text files that are placed on your device (computer, smartphone, tablet) when you visit a website. Cookies are widely used to make websites work more efficiently and provide information to website owners.
+
+How Cookies Work
+
+When you visit our website, we may send one or more cookies to your device. Your browser stores cookies in a way determined by your browser settings. Each time you visit our Services again, your browser sends those cookies back to the website, allowing us to recognize your device and remember certain information about your preferences or past actions.
+
+Types of Cookies
+
+Cookies can be classified in several ways:
+
+Session vs. Persistent Cookies
+
+• Session Cookies: Temporary cookies that are deleted when you close your browser
+• Persistent Cookies: Remain on your device for a set period or until you delete them
+
+First-Party vs. Third-Party Cookies
+
+• First-Party Cookies: Set by our website directly
+• Third-Party Cookies: Set by external services we use (analytics, advertising, social media)
+
+Cookies We Use
+
+Strictly Necessary Cookies
+
+These cookies are essential for our Services to function properly. They enable core functionality such as security, network management, and accessibility.
+
+Purpose:
+• Enable basic website functions
+• Remember your login status
+• Maintain security and prevent fraud
+• Enable secure checkout processes
+• Remember your cookie preferences
+
+We cannot provide our Services without these cookies. They are strictly necessary and do not require your consent.
+
+Examples:
+• Session identifiers
+• Authentication tokens
+• Security cookies
+• Load balancing cookies
+
+Performance and Analytics Cookies
+
+These cookies collect information about how visitors use our Services, such as which pages are visited most often and whether users receive error messages.
+
+Purpose:
+• Analyze website traffic and usage patterns
+• Measure website performance
+• Identify and fix technical issues
+• Improve user experience
+• Generate statistical reports
+
+Third-Party Services We Use:
+
+Google Analytics
+• Purpose: Track website visitors, page views, session duration, bounce rate
+• Data Collected: IP address (anonymized), pages viewed, time on site, device information
+• Retention: 26 months
+• Opt-Out: https://tools.google.com/dlpage/gaoptout
+
+Hotjar
+• Purpose: Understand user behavior through heatmaps and session recordings
+• Data Collected: Mouse movements, clicks, scroll depth, form interactions
+• Retention: 365 days
+• Opt-Out: https://www.hotjar.com/policies/do-not-track/
+
+Functionality Cookies
+
+These cookies allow our Services to remember choices you make and provide enhanced, personalized features.
+
+Purpose:
+• Remember your language preference
+• Remember your region/location
+• Maintain dark/light theme selection
+• Save customized layouts and settings
+• Remember newsletter signup preferences
+• Store font size and accessibility options
+
+Examples:
+• Language selection cookies
+• Theme preference cookies
+• Layout customization cookies
+• Accessibility setting cookies
+
+These cookies improve your experience but are not essential for basic website operation.
+
+Targeting and Advertising Cookies
+
+These cookies are used to deliver advertisements relevant to you and your interests. They also help limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns.
+
+Purpose:
+• Display personalized advertisements
+• Track advertising campaign performance
+• Limit ad frequency (frequency capping)
+• Measure ad engagement and conversions
+• Build advertising profiles based on browsing behavior
+
+Third-Party Advertising Partners:
+
+Google Ads
+• Purpose: Display targeted advertisements across Google's network
+• Data Collected: Browsing history, search queries, ad interactions
+• Controls: https://adssettings.google.com
+
+Facebook Pixel
+• Purpose: Track conversions from Facebook ads and build custom audiences
+• Data Collected: Pages visited, actions taken, device information
+• Controls: https://www.facebook.com/settings?tab=ads
+
+LinkedIn Insight Tag
+• Purpose: Track professional audience engagement and ad performance
+• Data Collected: Professional profile data, page views, conversions
+• Controls: https://www.linkedin.com/psettings/advertising
+
+Social Media Cookies
+
+These cookies enable social media functionality and allow you to share content from our Services.
+
+Purpose:
+• Enable social sharing buttons
+• Track social media referrals
+• Integrate social media feeds
+• Facilitate social login options
+
+Social Platforms:
+• Facebook: Connect with Facebook account, share content
+• Twitter (X): Share articles and updates
+• LinkedIn: Share professional content, track engagement
+• Instagram: Display Instagram feed integration
+
+Note: These cookies may track your browsing activity across websites.
+
+Cookie Duration
+
+Cookie Lifespan
+
+Session Cookies: Deleted when you close your browser
+
+Persistent Cookies: Vary in duration:
+• Short-term: 24 hours to 30 days (preferences, shopping carts)
+• Medium-term: 3-12 months (analytics, personalization)
+• Long-term: 1-2 years (advertising, tracking)
+
+You can view cookie expiration dates in your browser settings.
+
+Managing Your Cookie Preferences
+
+Browser Settings
+
+You can control and manage cookies through your browser settings. Most browsers allow you to:
+
+• View cookies stored on your device
+• Delete cookies individually or all at once
+• Block cookies from specific websites
+• Block all cookies by default
+• Set preferences for third-party cookies
+• Receive notifications before cookies are stored
+
+Browser-Specific Instructions:
+
+Google Chrome
+1. Settings → Privacy and Security → Cookies and other site data
+2. Choose your preferred cookie settings
+3. Manage exceptions for specific sites
+
+Mozilla Firefox
+1. Settings → Privacy & Security → Cookies and Site Data
+2. Select cookie acceptance preferences
+3. Manage data and exceptions
+
+Safari
+1. Preferences → Privacy → Cookies and website data
+2. Choose to block or allow cookies
+3. Manage website data
+
+Microsoft Edge
+1. Settings → Cookies and site permissions → Cookies and site data
+2. Configure cookie preferences
+3. Manage exceptions
+
+Mobile Browsers
+
+iOS Safari: Settings → Safari → Block All Cookies
+Android Chrome: Settings → Site Settings → Cookies
+
+Cookie Consent Management
+
+Our Cookie Banner
+
+When you first visit our Services, you'll see a cookie consent banner that allows you to:
+
+• Accept all cookies
+• Reject non-essential cookies
+• Customize your cookie preferences
+• Learn more about our cookie practices
+
+Cookie Preference Center
+
+You can change your cookie preferences at any time by clicking the "Cookie Settings" link in our website footer. This opens our preference center where you can:
+
+• Enable or disable specific cookie categories
+• View detailed information about each cookie
+• Save your preferences
+• Withdraw consent previously given
+
+Your preferences are stored in a cookie (ironically) to remember your choices.
+
+Impact of Disabling Cookies
+
+Consequences of Blocking Cookies
+
+If you choose to disable cookies, please be aware that:
+
+Essential Functions May Break:
+• You may not be able to log in to your account
+• Shopping cart functionality may not work
+• Security features may be compromised
+• Website performance may be degraded
+
+Personalization Will Be Limited:
+• Your preferences won't be remembered
+• Content won't be customized to your interests
+• Language and region settings will reset
+• Theme preferences won't persist
+
+Analytics Will Be Affected:
+• We won't be able to improve our Services based on usage data
+• We can't identify and fix technical issues as effectively
+
+Advertising Will Be Less Relevant:
+• You'll still see advertisements, but they won't be personalized
+• You may see the same ads repeatedly
+
+Do Not Track Signals
+
+Browser DNT Settings
+
+Some browsers offer a "Do Not Track" (DNT) feature that sends a signal to websites requesting not to be tracked. Currently, there is no industry-wide standard for responding to DNT signals.
+
+Our Approach
+
+At this time, our Services do not respond to DNT signals. However, you can manage cookies through your browser settings and our cookie preference center as described above.
+
+We continue to monitor developments in DNT technology and may update our practices in the future.
+
+Other Tracking Technologies
+
+In addition to cookies, we may use other tracking technologies:
+
+Web Beacons (Pixels)
+
+Small transparent images embedded in web pages or emails that:
+• Track email open rates
+• Monitor page visits and user behavior
+• Measure advertising effectiveness
+
+Local Storage
+
+HTML5 local storage allows websites to store larger amounts of data on your device:
+• Store user preferences
+• Cache data for offline access
+• Improve application performance
+
+Device Fingerprinting
+
+Collecting device characteristics to create a unique identifier:
+• Screen resolution and size
+• Operating system and version
+• Browser type and plugins
+• Language and timezone settings
+
+Note: We use device fingerprinting only for fraud prevention and security purposes, not for advertising.
+
+Third-Party Services
+
+Analytics Providers
+
+Google Analytics: Tracks website performance and user behavior
+Mixpanel: Analyzes user engagement and conversion funnels
+Segment: Collects and routes analytics data to various tools
+
+Advertising Networks
+
+Google AdSense: Displays contextual advertisements
+Media.net: Provides alternative ad inventory
+Taboola: Recommends sponsored content
+
+Content Delivery
+
+Cloudflare: Improves website speed and security
+Amazon CloudFront: Delivers content efficiently
+Fastly: Accelerates content delivery
+
+Customer Support
+
+Intercom: Live chat and customer messaging
+Zendesk: Support ticket management
+Drift: Conversational marketing and sales
+
+These third-party services may set their own cookies. Please review their privacy policies for details on how they use cookies.
+
+International Data Transfers
+
+Cookies may result in data being transferred to countries outside your residence, including the United States and European Union. These countries may have different data protection laws.
+
+We ensure appropriate safeguards are in place for international transfers, including:
+• Standard contractual clauses
+• Privacy Shield frameworks (where applicable)
+• Adequacy decisions by regulatory authorities
+
+Children's Privacy
+
+Our Services are not intended for children under 16. We do not knowingly collect information from children through cookies or other means.
+
+If you believe a child has provided us with personal information through cookies, please contact us immediately at privacy@beyondbordersreport.com.
+
+Updates to This Policy
+
+We may update this Cookies Policy from time to time to reflect changes in:
+• Cookie technologies we use
+• Legal requirements
+• Our business practices
+
+When we make material changes, we will:
+• Update the "Last Updated" date at the top of this policy
+• Notify you via email (for registered users)
+• Display a prominent notice on our website
+
+We encourage you to review this policy periodically.
+
+Legal Basis for Using Cookies
+
+Under GDPR and similar privacy regulations, we must have a legal basis for using cookies:
+
+Consent: For non-essential cookies (analytics, advertising, social media)
+Legitimate Interest: For some functionality cookies that improve user experience
+Contractual Necessity: For cookies essential to providing our Services
+Legal Obligation: For cookies required to comply with legal requirements
+
+Your Rights
+
+Under applicable privacy laws (GDPR, CCPA), you have rights regarding your data collected through cookies:
+
+• Right to Access: Request information about cookies we've set
+• Right to Deletion: Request deletion of cookie data
+• Right to Object: Object to certain cookie uses
+• Right to Restriction: Limit how we use cookie data
+• Right to Portability: Receive cookie data in a portable format
+• Right to Withdraw Consent: Change cookie preferences at any time
+
+To exercise these rights, contact us at privacy@beyondbordersreport.com.
+
+Contact Us
+
+If you have questions about our use of cookies, please contact us:
+
+Beyond Borders Report
+Privacy Team
+
+• Email: privacy@beyondbordersreport.com
+• Phone: +1 (555) 123-4567
+• Address: 123 Global News Avenue, New York, NY 10001
+• Cookie Preferences: Available in website footer
+
+For general inquiries: /contact
+
+Additional Resources
+
+To learn more about cookies and online privacy:
+
+• All About Cookies: https://www.allaboutcookies.org
+• Your Online Choices: https://www.youronlinechoices.com
+• Network Advertising Initiative: https://www.networkadvertising.org
+• Digital Advertising Alliance: https://www.aboutads.info
+• European Interactive Digital Advertising Alliance: https://www.edaa.eu
+
+Thank you for trusting Beyond Borders Report. We are committed to transparency in our use of cookies and protecting your privacy.

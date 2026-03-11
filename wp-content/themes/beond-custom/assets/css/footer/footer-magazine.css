@@ -1,0 +1,376 @@
+/**
+ * Magazine Footer Styles
+ * Editorial-style footer with extensive content areas
+ * 
+ * @package Beond_Custom
+ */
+
+/* ========================================
+   Footer Magazine
+   ======================================== */
+
+.footer-magazine {
+    background: var(--cream);
+    color: var(--text-primary);
+    padding: 0;
+    border-top: 2px solid var(--navy-primary);
+}
+
+/* ========================================
+   Newsletter Editorial Section
+   ======================================== */
+
+.footer-newsletter-section {
+    background: var(--navy-deep);
+    padding: 60px 40px;
+    border-bottom: 3px solid var(--gold-champagne);
+}
+
+.footer-newsletter-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.newsletter-editorial-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.newsletter-editorial-text {
+    color: var(--white);
+}
+
+.newsletter-editorial-title {
+    font-family: var(--font-headline);
+    font-size: 42px;
+    color: var(--gold-champagne);
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.newsletter-editorial-description {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+/* Newsletter Form */
+.newsletter-editorial-form {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(201, 169, 97, 0.3);
+}
+
+.newsletter-form-group {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.newsletter-form-group input {
+    flex: 1;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: var(--font-ui);
+    color: var(--text-primary);
+}
+
+.newsletter-form-group input:focus {
+    outline: none;
+    border-color: var(--gold-champagne);
+    background: var(--white);
+}
+
+.btn-newsletter {
+    padding: 16px 32px;
+    background: var(--gold-champagne);
+    color: var(--navy-deep);
+    border: 2px solid var(--gold-champagne);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-ui);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-newsletter:hover {
+    background: transparent;
+    color: var(--gold-champagne);
+}
+
+.newsletter-privacy-note {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    text-align: center;
+}
+
+/* ========================================
+   Footer Editorial Grid
+   ======================================== */
+
+.footer-editorial-grid {
+    background: var(--cream);
+    padding: 80px 60px;
+}
+
+.footer-editorial-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-grid-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+}
+
+/* ========================================
+   Footer About/Brand
+   ======================================== */
+
+.footer-about {
+    padding-right: 40px;
+}
+
+.footer-about .footer-logo-link {
+    display: block;
+}
+
+.footer-about .footer-logo {
+    max-width: 180px !important;
+    height: auto !important;
+    margin-bottom: 15px !important;
+}
+
+.footer-logo {
+    font-family: var(--font-headline);
+    font-size: 28px;
+    color: var(--navy-primary);
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.footer-about .footer-tagline {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--gold-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.footer-description {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 28px;
+}
+
+/* ========================================
+   Footer Social Editorial
+   ======================================== */
+
+.footer-social-editorial h4 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--navy-primary);
+    margin-bottom: 12px;
+}
+
+.social-icons-editorial {
+    display: flex;
+    gap: 12px;
+}
+
+.social-editorial-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--light-gray);
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    color: var(--navy-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.social-editorial-link:hover {
+    background: var(--gold-champagne);
+    border-color: var(--gold-champagne);
+    color: var(--navy-deep);
+    transform: translateY(-3px);
+}
+
+/* ========================================
+   Footer Columns
+   ======================================== */
+
+.footer-editorial-column h4,
+.footer-editorial-column .widget-title {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+    color: var(--navy-primary);
+    border-bottom: 2px solid var(--gold-champagne);
+    padding-bottom: 8px;
+}
+
+.footer-editorial-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-editorial-column li {
+    margin-bottom: 12px;
+}
+
+.footer-editorial-column a {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-editorial-column a:hover {
+    color: var(--gold-champagne);
+    transform: translateX(3px);
+}
+
+/* Widget Styles */
+.footer-editorial-column .widget {
+    margin-bottom: 0;
+}
+
+.footer-editorial-column .widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ========================================
+   Footer Magazine Bottom
+   ======================================== */
+
+.footer-magazine-bottom {
+    background: var(--navy-deep);
+    padding: 30px 60px;
+    border-top: 1px solid rgba(201, 169, 97, 0.3);
+}
+
+.footer-magazine-bottom-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-magazine-copyright {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-magazine-meta {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-magazine-meta a {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-magazine-meta a:hover {
+    color: var(--gold-champagne);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .footer-grid-wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    
+    .footer-about {
+        grid-column: 1 / -1;
+        padding-right: 0;
+    }
+    
+    .newsletter-editorial-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-editorial-grid {
+        padding: 60px 30px;
+    }
+    
+    .footer-newsletter-section {
+        padding: 40px 30px;
+    }
+    
+    .footer-grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-magazine-bottom {
+        padding: 20px 30px;
+    }
+    
+    .footer-magazine-bottom-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-editorial-title {
+        font-size: 32px;
+    }
+    
+    .newsletter-form-group {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .newsletter-editorial-title {
+        font-size: 28px;
+    }
+    
+    .newsletter-editorial-description {
+        font-size: 14px;
+    }
+}

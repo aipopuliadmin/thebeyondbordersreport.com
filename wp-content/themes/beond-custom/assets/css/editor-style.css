@@ -1,0 +1,28 @@
+/**
+ * Editor styles
+ *
+ * @package Beond_Custom
+ */
+
+body {
+    font-family: 'Lora', serif;
+    color: #1A1A2E;
+    line-height: 1.7;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #003366;
+    line-height: 1.2;
+}
+
+a {
+    color: #003366;
+}
+
+a:hover {
+    color: #C9A961;
+}

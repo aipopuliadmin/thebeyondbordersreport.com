@@ -1,0 +1,22 @@
+/**
+ * Public styles for Beyond Borders plugin.
+ *
+ * @package Beyond_Borders
+ */
+
+/* CSS Variables are injected by the Customizer class */
+
+.featured-article {
+    border-left: 4px solid var(--gold-primary, #C9A961);
+    padding-left: 20px;
+}
+
+.region-badge {
+    background: var(--navy-primary, #003366);
+    color: var(--cream, #FAF8F5);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}

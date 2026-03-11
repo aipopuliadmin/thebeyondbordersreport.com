@@ -1,0 +1,99 @@
+/**
+ * Main stylesheet
+ *
+ * @package Beond_Custom
+ */
+
+/* Additional component styles will be added here */
+/* Header styles are loaded from assets/css/header/header-modern.css */
+
+/* Components will be added during HTML conversion */
+
+/* ========================================
+   Back to Top Button - Floating Design
+   ======================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--gold-champagne);
+    color: var(--navy-deep);
+    border: 2px solid var(--gold-champagne);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.4);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.8);
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover {
+    background: var(--navy-deep);
+    color: var(--white);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.6);
+}
+
+.back-to-top:active {
+    transform: translateY(-3px) scale(1.05);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.back-to-top:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Dark theme support */
+[data-theme="dark"] .back-to-top {
+    background: rgba(201, 169, 97, 0.9);
+    border-color: var(--gold-champagne);
+    box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+}
+
+[data-theme="dark"] .back-to-top:hover {
+    background: var(--gold-champagne);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .back-to-top svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+}

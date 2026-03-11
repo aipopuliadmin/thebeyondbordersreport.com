@@ -1,0 +1,826 @@
+/**
+ * Beyond Borders Admin Settings Styles
+ * Professional admin interface for all settings pages
+ */
+
+/* ==========================================================================
+   Main Container & Layout
+   ========================================================================== */
+
+.beyond-borders-settings {
+    max-width: 1400px;
+    padding: 20px 0 100px 0;
+    margin: 0 auto;
+}
+
+.bb-settings-header {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.bb-settings-header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #0A1628;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.5px;
+}
+
+.bb-subtitle {
+    font-size: 15px;
+    color: #646970;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Grid Layout
+   ========================================================================== */
+
+.bb-settings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 24px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 1024px) {
+    .bb-settings-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   Cards
+   ========================================================================== */
+
+.bb-settings-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s ease;
+}
+
+.bb-settings-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border-color: #d1d5db;
+}
+
+.bb-card-header {
+    padding: 24px 28px;
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.bb-card-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0A1628;
+    margin: 0;
+    letter-spacing: -0.2px;
+}
+
+.bb-card-body {
+    padding: 28px;
+}
+
+/* ==========================================================================
+   Form Fields
+   ========================================================================== */
+
+.bb-field {
+    margin-bottom: 28px;
+}
+
+.bb-field:last-child {
+    margin-bottom: 0;
+}
+
+.bb-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 10px;
+    letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   Input Elements
+   ========================================================================== */
+
+.bb-input,
+.bb-select,
+.bb-textarea {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #1e293b;
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.bb-input:hover,
+.bb-select:hover,
+.bb-textarea:hover {
+    background: #f1f3f5;
+    border-color: #e9ecef;
+}
+
+.bb-input:focus,
+.bb-select:focus,
+.bb-textarea:focus {
+    outline: none;
+    background: #ffffff;
+    border-color: #003366;
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.08);
+}
+
+.bb-input-small {
+    max-width: 120px;
+}
+
+.bb-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.bb-select {
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23374151" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"%3e%3cpolyline points="6 9 12 15 18 9"%3e%3c/polyline%3e%3c/svg%3e');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+/* ==========================================================================
+   Toggle Switches
+   ========================================================================== */
+
+.bb-toggle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+    padding: 14px 18px;
+    background: #f8f9fa;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.bb-toggle:hover {
+    background: #f1f3f5;
+    border-color: #e9ecef;
+}
+
+.bb-toggle input[type="checkbox"] {
+    position: relative;
+    width: 44px;
+    height: 24px;
+    margin: 0 14px 0 0;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background: #cbd5e1;
+    border: none;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bb-toggle input[type="checkbox"]::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.bb-toggle input[type="checkbox"]:hover {
+    background: #94a3b8;
+}
+
+.bb-toggle input[type="checkbox"]:checked {
+    background: #003366;
+}
+
+.bb-toggle input[type="checkbox"]:checked::after {
+    left: 22px;
+}
+
+.bb-toggle input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.15);
+}
+
+.bb-toggle-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1e293b;
+    letter-spacing: 0.2px;
+}
+
+/* ==========================================================================
+   Help Text
+   ========================================================================== */
+
+.bb-help-text {
+    margin: 8px 0 0 0;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Info & Notice Boxes
+   ========================================================================== */
+
+.bb-info-box {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 1px solid #93c5fd;
+    border-left: 4px solid #3b82f6;
+    padding: 16px 18px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #1e40af;
+    line-height: 1.6;
+}
+
+.bb-info-box a {
+    color: #1d4ed8;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.bb-info-box a:hover {
+    border-bottom-color: #1d4ed8;
+}
+
+.bb-section-notice {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border: 1px solid #fcd34d;
+    border-left: 4px solid #f59e0b;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+    border-radius: 8px;
+}
+
+.bb-section-notice p {
+    margin: 0;
+    font-size: 14px;
+    color: #92400e;
+    line-height: 1.6;
+}
+
+.bb-section-notice strong {
+    color: #78350f;
+    font-weight: 700;
+}
+
+.bb-auto-stats-preview {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #7dd3fc;
+    border-left: 4px solid #0ea5e9;
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.bb-auto-stats-preview p {
+    margin: 0 0 12px 0;
+    color: #075985;
+    font-weight: 600;
+}
+
+.bb-auto-stats-preview ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.bb-auto-stats-preview li {
+    padding: 6px 0;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 13px;
+    color: #0c4a6e;
+}
+
+/* ==========================================================================
+   Footer Actions
+   ========================================================================== */
+
+.bb-settings-footer {
+    position: fixed;
+    bottom: 0;
+    left: 160px;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.06);
+}
+
+body.folded .bb-settings-footer {
+    left: 36px;
+}
+
+@media (max-width: 782px) {
+    .bb-settings-footer {
+        left: 0;
+    }
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+
+.bb-button {
+    padding: 14px 36px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.3px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.bb-button-primary {
+    background: linear-gradient(135deg, #003366 0%, #00274D 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.25);
+}
+
+.bb-button-primary:hover {
+    background: linear-gradient(135deg, #00274D 0%, #0A1628 100%);
+    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.35);
+    transform: translateY(-2px);
+}
+
+.bb-button-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(0, 51, 102, 0.2);
+}
+
+.button.button-primary.button-hero {
+    background: linear-gradient(135deg, #003366 0%, #00274D 100%);
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 51, 102, 0.25);
+    text-shadow: none;
+    padding: 14px 36px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.button.button-primary.button-hero:hover {
+    background: linear-gradient(135deg, #00274D 0%, #0A1628 100%);
+    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.35);
+    transform: translateY(-2px);
+}
+
+.bb-footer-note {
+    margin: 0;
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.bb-footer-note a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.bb-footer-note a:hover {
+    border-bottom-color: #003366;
+}
+
+/* ==========================================================================
+   Color Picker Overrides
+   ========================================================================== */
+
+.wp-picker-container {
+    margin-top: 4px;
+}
+
+.wp-picker-container .wp-color-result {
+    border-radius: 6px;
+    border: 2px solid #e5e7eb;
+    box-shadow: none;
+    padding: 0;
+    height: 36px;
+}
+
+.wp-picker-container .wp-color-result:hover {
+    border-color: #003366;
+}
+
+.wp-picker-container .wp-color-result-text {
+    background: #f8f9fa;
+    border-radius: 0 4px 4px 0;
+    border-left: 1px solid #e5e7eb;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+    .bb-settings-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .beyond-borders-settings {
+        padding: 15px 0 120px 0;
+    }
+
+    .bb-settings-header h1 {
+        font-size: 24px;
+    }
+
+    .bb-card-body {
+        padding: 20px;
+    }
+
+    .bb-settings-footer {
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        padding: 16px 20px;
+    }
+
+    .bb-button,
+    .button.button-primary.button-hero {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .bb-footer-note {
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+.bb-input:focus-visible,
+.bb-select:focus-visible,
+.bb-textarea:focus-visible,
+.bb-toggle:focus-within {
+    outline: 2px solid #003366;
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Loading States
+   ========================================================================== */
+
+.bb-settings-card.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.bb-settings-card.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin: -12px 0 0 -12px;
+    border: 3px solid #e5e7eb;
+    border-top-color: #003366;
+    border-radius: 50%;
+    animation: bb-spin 0.8s linear infinite;
+}
+
+@keyframes bb-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   WordPress Admin Notices Integration
+   ========================================================================== */
+
+.beyond-borders-settings .notice {
+    margin: 0 0 24px 0;
+    border-left-width: 4px;
+    border-radius: 6px;
+}
+
+.beyond-borders-settings .notice-success {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border-left-color: #22c55e;
+}
+
+.beyond-borders-settings .notice-error {
+    background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    border-left-color: #ef4444;
+}
+
+/* ==========================================================================
+   User Management Specific Styles
+   ========================================================================== */
+
+.beyond-borders-admin-page {
+    background: #fff;
+}
+
+/* Tab Navigation */
+.nav-tab-wrapper {
+    border-bottom: 2px solid #e5e5e5;
+    margin: 20px 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-tab {
+    display: inline-block;
+    padding: 12px 15px;
+    margin-right: 0;
+    margin-bottom: -2px;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    color: #0073aa;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.nav-tab:hover {
+    background-color: #fafafa;
+    color: #005a87;
+}
+
+.nav-tab.nav-tab-active {
+    background-color: #fff;
+    color: #0073aa;
+    border-top: 3px solid #0073aa;
+    border-bottom: 1px solid #fff;
+    font-weight: 600;
+    padding-top: 9px;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tab-content.active {
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Postbox Styles */
+.postbox {
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin: 20px 0;
+    padding: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.postbox:hover {
+    border-color: #0073aa;
+}
+
+.postbox .hndle {
+    background: linear-gradient(to right, #f5f5f5 0%, #fafafa 100%);
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 12px 15px;
+    margin: 0;
+    cursor: move;
+    font-weight: 600;
+    color: #0073aa;
+}
+
+.postbox .hndle:hover {
+    background-color: #efefef;
+}
+
+.postbox .hndle span {
+    display: block;
+}
+
+.postbox .inside {
+    padding: 15px;
+}
+
+.postbox .inside p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Table Styles for User Management */
+.beyond-borders-admin-page table.widefat {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.beyond-borders-admin-page table.widefat thead {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.beyond-borders-admin-page table.widefat th {
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #e5e5e5;
+}
+
+.beyond-borders-admin-page table.widefat td {
+    padding: 12px;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+}
+
+.beyond-borders-admin-page table.widefat tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.beyond-borders-admin-page table.widefat tbody tr:hover {
+    background-color: #f9f9f9;
+}
+
+.beyond-borders-admin-page table.widefat tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+.beyond-borders-admin-page table.widefat tbody tr:nth-child(even):hover {
+    background-color: #f5f5f5;
+}
+
+.beyond-borders-admin-page table.widefat small {
+    display: block;
+    color: #888;
+    margin-top: 3px;
+}
+
+/* Badge Styles */
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: 5px;
+}
+
+.badge-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.badge-secondary {
+    background-color: #e2e3e5;
+    color: #383d41;
+    border: 1px solid #d6d8db;
+}
+
+/* Form Elements */
+.beyond-borders-admin-page select.regular-text,
+.beyond-borders-admin-page input[type="text"].regular-text,
+.beyond-borders-admin-page input[type="email"].regular-text {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.beyond-borders-admin-page select.regular-text:focus,
+.beyond-borders-admin-page input[type="text"].regular-text:focus,
+.beyond-borders-admin-page input[type="email"].regular-text:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.1);
+    outline: none;
+}
+
+/* Checkbox Styles */
+.beyond-borders-admin-page input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+/* Author Badge Classes */
+.author-badge-bb-desk {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.author-badge-bb-desk::before {
+    content: '✓ ';
+    margin-right: 3px;
+}
+
+.author-badge-guest {
+    color: #ffc107;
+    font-weight: 600;
+}
+
+.author-badge-guest::before {
+    content: '◆ ';
+    margin-right: 3px;
+}
+
+.author-badge-podcast {
+    color: #e83e8c;
+    font-weight: 600;
+}
+
+.author-badge-podcast::before {
+    content: '♪ ';
+    margin-right: 3px;
+}
+
+/* Utility Classes */
+.beyond-borders-admin-page code {
+    background: #f4f4f4;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+.beyond-borders-admin-page hr {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 20px 0;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .beyond-borders-admin-page table.widefat {
+        font-size: 13px;
+    }
+
+    .beyond-borders-admin-page table.widefat th,
+    .beyond-borders-admin-page table.widefat td {
+        padding: 8px;
+    }
+
+    .nav-tab {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .beyond-borders-admin-page select.regular-text,
+    .beyond-borders-admin-page input[type="text"].regular-text {
+        max-width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Dark Mode Support (Optional - for future)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+    /* Keep light theme for admin - better readability */
+}
